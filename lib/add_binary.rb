@@ -6,5 +6,5 @@ def add_binary(a, b)
 end
 
 def get_binary(number)
-
+  number.to_s(2)
 end
