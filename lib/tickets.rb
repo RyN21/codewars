@@ -5,20 +5,21 @@ def tickets(people)
   until people == [] do
     if people[0] == 25
       drawer += people[0]
+      people.shift
       return 'YES' if people = []
     elsif people[0] == 50 && drawer >= 25
-      drawer += 50
-      drawer -= 25
+      drawer += 25
+      people.shift
       return 'YES' if people = []
     elsif people[0] == 100 && drawer >= 75
-      drawer += 100
-      drawer -= 75
+      drawer += 25
+      people.shift
       return 'YES' if people = []
     else
-      return 'NO'
+      break
     end
+    return 'NO'
   end
-  people.shift
 end
 
 
