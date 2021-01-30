@@ -2,12 +2,27 @@ require 'pry'
 
 
 def tickets(people)
-  drawer = []
-  until people.count == 1
-    drawer << people[0]
-    people.shift
-    binding.pry
-
+  drawer = {'25' => 0, '50' => 0, '100' => 0}
+  until people.count == 0
+    if people[0] == 25
+      drawer['25'] += 1
+      people.shift
+    elsif people[0] == 50 && drawer['25'] >= 1
+      drawer['25'] -= 1
+      people.shift
+      return "YES" if people == []
+    elsif people[0] == 100 && drawer['25'] == 3
+      drawer['25'] -= 3
+      people.shift
+      return "YES" if people == []
+    elsif people[0] == 100 && drawer['25'] == 2 && drawer['50'] >= 1
+      drawer['25'] -= 2
+      drawer['50'] -= 1
+      people.shift
+      return "YES" if people == []
+    else
+      return "NO"
+    end
   end
 end
 
