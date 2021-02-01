@@ -1,6 +1,9 @@
 require 'pry'
 
 
+# MY SOLUTION
+#=======================================================================================
+
 def tickets(people)
   drawer = {'25' => 0, '50' => 0, '100' => 0}
   while people.count > 0
@@ -30,39 +33,45 @@ def tickets(people)
 end
 
 
+# BEST PRACTICE
+#=======================================================================================
 
-# def tickets(people)
-#   drawer = 0
-#   until people == [] do
-#     if people[0] == 25
-#       drawer += people[0]
-#       people.shift
-#       return 'YES' if people = []
-#     elsif people[0] == 50 && drawer >= 25
-#       drawer += 25
-#       people.shift
-#       return 'YES' if people = []
-#     elsif people[0] == 100 && drawer >= 75
-#       drawer += 25
-#       people.shift
-#       return 'YES' if people = []
-#     else
-#       break
-#     end
-#     return 'NO'
-#   end
-# end
+def tickets(people)
+  bills_25, bills_50 = 0, 0
+
+  people.each { |v|
+    if v == 25
+      bills_25 += 1        # keep the 25
+
+    elsif v == 50 and bills_25 > 0
+      bills_50 += 1        # keep the 50
+      bills_25 -= 1        # return 25
+
+    elsif v == 100 and (bills_25 >= 3 or (bills_50 > 0 and bills_25 > 0))
+      if bills_50 > 0
+        bills_50 -= 1    # return 50
+        bills_25 -= 1    # return 25
+      else
+        bills_25 -= 3    # return 3x25
+      end
+
+    else
+      return "NO"
+    end
+  }
+
+  "YES"
+end
 
 
 
+# CLEVER
+#=======================================================================================
 
-
-
-# people.each do |p|
-#   if p = 25
-#     drawer += p
-#   elsif p == 50 && drawer >= 25
-#     binding.pry
-#     drawer += p
-#     drawer -= 25
-#   end
+ADJ = {25=>[[1, 0, 0], [0, 0, 0]], 50=>[[-1, 1, 0], [-1, 0, 0]], 100=>[[-1, -1, 1], [-2, 1, 0]]}
+def adjusted(adj); ($bills = ($bills.zip(adj)).map{|x| x.sum}).none?(&:negative?); end
+def tickets(people)
+  $bills = [0, 0, 0]
+  people.each {|p| return 'NO' if not adjusted(ADJ[p][0]) and not adjusted(ADJ[p][1])}
+  return 'YES'
+end
