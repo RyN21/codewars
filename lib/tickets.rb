@@ -13,7 +13,7 @@ def tickets(people)
       drawer['50'] += 1
       people.shift
       return "YES" if people.count == 0
-    elsif people[0] == 100 && drawer['25'] >= 3
+    elsif people[0] == 100 && drawer['25'] >= 3 && drawer['50'] == 0
       drawer['25'] -= 3
       people.shift
       return "YES" if people.count == 0
