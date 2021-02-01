@@ -8,16 +8,16 @@ def tickets(people)
       drawer['25'] += 1
       people.shift
       return "YES" if people.count == 0
-    elsif people[0] == 50 && drawer['25'] > 0
+    elsif people[0] == 50 && drawer['25'] >= 1
       drawer['25'] -= 1
       drawer['50'] += 1
       people.shift
       return "YES" if people.count == 0
-    elsif people[0] == 100 && drawer['25'] == 3
+    elsif people[0] == 100 && drawer['25'] >= 3
       drawer['25'] -= 3
       people.shift
       return "YES" if people.count == 0
-    elsif people[0] == 100 && drawer['25'] == 2 && drawer['50'] >= 1
+    elsif people[0] == 100 && drawer['25'] >= 1 && drawer['50'] >= 1
       drawer['25'] -= 2
       drawer['50'] -= 1
       drawer['100'] += 1
