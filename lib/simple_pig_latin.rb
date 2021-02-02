@@ -1,15 +1,13 @@
 require 'pry'
 
 def pig_it(string)
-  special = "?<>',?[]}{=-)(*&^%$#`~{}"
   string.split(" ").map do |w|
     if w.index( /[^[:alnum:]]/ ) == nil
       a = w.chars
       a << a.shift
       a << "ay"
       a.join
-    else
-      binding.pry
+    elsif w.index( /[^[:alnum:]]/ ) != nil && w.length > 1
       i = w.index( /[^[:alnum:]]/ )
       a = w.chars
       special = a[i]
@@ -18,6 +16,8 @@ def pig_it(string)
       a << "ay"
       a << special
       a.join
+    elsif w.index( /[^[:alnum:]]/ ) != nil && w.length == 1
+      w
     end
   end.join(" ")
 end
