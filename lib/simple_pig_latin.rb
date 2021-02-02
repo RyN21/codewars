@@ -40,3 +40,29 @@ end
 def pig_it text
   text.gsub(/(\w)(\w+)*/, '\2\1ay')
 end
+
+
+# ALTERNATIVE
+#=======================================================================================
+
+def pig_it(text)
+  text.split.map{|word| word =~ /\w/ ? "#{word[1..-1]}#{word[0]}ay" : word}.join(" ")
+end
+
+# ALTERNATIVE
+# =======================================================================================
+
+def pig_it(text)
+  text.split(' ').map { |word| pig_word(word) }.join(' ')
+end
+
+def pig_word(word)
+  word.match(/\W/) ? word : word.chars.rotate(1).join + "ay"
+end
+
+# ALTERNATIVE
+# =======================================================================================
+
+def pig_it(text)
+  text.gsub(/(\w)(\w+)?/, '\2\1ay')
+end
