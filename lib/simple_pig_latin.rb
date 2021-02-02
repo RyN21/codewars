@@ -1,5 +1,8 @@
 require 'pry'
 
+# MY SOLUTION
+#=======================================================================================
+
 def pig_it(string)
   string.split(" ").map do |w|
     if w.index( /[^[:alnum:]]/ ) == nil
@@ -16,8 +19,24 @@ def pig_it(string)
       a << "ay"
       a << special
       a.join
-    elsif w.index( /[^[:alnum:]]/ ) != nil && w.length == 1
+    else
       w
     end
   end.join(" ")
+end
+
+
+# BEST PRACTICE
+#=======================================================================================
+
+def pig_it text
+  text.gsub(/(\w)(\w+)*/, '\2\1ay')
+end
+
+
+# CLEVER
+#=======================================================================================
+
+def pig_it text
+  text.gsub(/(\w)(\w+)*/, '\2\1ay')
 end
