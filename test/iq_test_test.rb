@@ -20,5 +20,3 @@ end
 
 # ! Keep in mind that your task is to help Bob solve a real IQ test,
 # which means indexes of the elements start from 1 (not 0)
-
-# Examples:
