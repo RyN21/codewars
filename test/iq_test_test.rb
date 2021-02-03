@@ -10,7 +10,7 @@ class IqTestTest < Minitest::Test
     assert_equal iq_test("1 2 1 1"), 2
   end
 end
-("1 2 1 1") => 2
+
 
 # Bob is preparing to pass IQ test. The most frequent task in this test is
 # to find out which one of the given numbers differs from the others.
