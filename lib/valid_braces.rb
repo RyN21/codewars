@@ -59,3 +59,19 @@ def validBraces(braces)
     end
   }.empty?
 end
+
+
+# ALTERNATIVE
+#=======================================================================================
+
+def validBraces(braces)
+  pairs = {")" => "(", "]" => "[", "}" => "{"}
+  stack = []
+  braces.each_char {|c|
+    case c
+      when "(", "[", "{" then stack << c
+      when ")", "]", "}" then return false if stack.pop != pairs[c]
+    end
+  }
+  stack.empty?
+end
