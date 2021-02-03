@@ -5,11 +5,12 @@ require_relative '../lib/valid_braces'
 
 class ValidBracesTest < Minitest::Test
   def test_it_adds_binary
-    assert_equal valid_braces('(){}[]'), true
-    assert_equal valid_braces('({[]})'), true
-    assert_equal valid_braces('(]'), false
-    assert_equal valid_braces('[(])'), false
-    assert_equal valid_braces('[({})](]'), false
+    assert_equal validBraces('(){}[]'), true
+    assert_equal validBraces('({[]})'), true
+    assert_equal validBraces('(]'), false
+    assert_equal validBraces('[(])'), false
+    assert_equal validBraces('[({})](]'), false
+    assert_equal validBraces('[}{]'), false
   end
 end
 

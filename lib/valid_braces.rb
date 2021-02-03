@@ -1,10 +1,12 @@
 require 'pry'
 
-def valid_braces(string)
-  hash = {}
-  a = string.chars.each do |brace|
-    hash[brace] = [] if hash[braces].nil?
-    hash[brace] << brace
-  end
+# MY SOLUTION
+#=======================================================================================
 
+def validBraces(str)
+  return true if str.empty?
+  s = str.gsub(/\(\)|\[\]|\{\}/,"")
+  binding.pry
+  return false if s == str
+  validBraces(s)
 end
