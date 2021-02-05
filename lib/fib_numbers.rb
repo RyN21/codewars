@@ -8,10 +8,13 @@ def productFib(prod)
     fibs << num
     i += 1
   end
-  binding.pry
+
   i = 0
-  until prod == 
-  if prod prod.to_f / fibs[i] == 0 || prod prod.to_f / fibs[i] == 1
-    i +=
-  if
+  until prod == p
+    p = fibs[i].to_f * fibs[i + 1]
+    return [fibs[i], fibs[i+1], true] if p == prod
+    i += 1
+  end
+
+  binding.pry
 end
