@@ -1,7 +1,7 @@
 gem 'minitest', '~>5.2'
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative '../lib/sum_of_factors'
+require_relative '../lib/sum_by_factors'
 
 class SumByFactorsTest < Minitest::Test
   def test_it
