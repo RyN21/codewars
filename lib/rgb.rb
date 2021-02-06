@@ -1,15 +1,10 @@
 require 'pry'
 
 def rgb(r, g, b)
-  if r > 255 then r = 255 end
-  if g > 255 then g = 255 end
-  if b > 255 then b = 255 end
-  if r < 0 then r = 0 end
-  if g < 0 then g = 0 end
-  if b < 0 then b = 0 end
-  r, g, b =
-  newr = r.to_s(16).upcase.rjust(2, "0")
-  newg = g.to_s(16).upcase.rjust(2, "0")
-  newb = b.to_s(16).upcase.rjust(2, "0")
-  newr + newg + newb
+  arr = [r, g, b]
+  arr.map do |ele|
+    ele < 0 ? ele = 0 : ele = ele
+    ele > 255 ? ele = 255 : ele = ele
+    ele.to_s(16).upcase.rjust(2, "0")
+  end.join
 end
