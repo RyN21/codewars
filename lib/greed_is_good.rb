@@ -6,10 +6,14 @@ require 'pry'
 def score(dice)
   scr = 0
   points = {'3x1s' => 1000, '3x6s' => 600, '3x5s' => 500, '3x4s' => 400, '3x3s' => 300, '3x2s' => 200, '1x1' => 100, '1x5' => 50}
-  grouped = dice.group_by do |e|
+  grouped = dice.sort.chunk do |e|
     e
-  end.select { |k, v| v.size > 2  }.map(&:first)
-  binding.pry
+  end.select { |e, chunk| chunk.size > 1 }
+  grouped.each do |g|
+    if g[1] >= 3
+    binding.pry
+  end
+  scr += points["3x#{grouped[0]}s"]
 end
 
 
