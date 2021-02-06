@@ -8,7 +8,7 @@ class RgbTest < Minitest::Test
     assert_equal rgb(0, 0, 0), '000000'
     assert_equal rgb(0, 0, -20), '000000'
     assert_equal rgb(300,255,255), 'FFFFFF'
-    assert_equal rgb(173,255,47), 'ADFF2F')
+    assert_equal rgb(173,255,47), 'ADFF2F'
   end
 end
 
