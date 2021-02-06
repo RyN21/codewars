@@ -3,8 +3,8 @@ require 'pry'
 # MY SOLUTION
 #=======================================================================================
 
-def rgb(r, g, b)
-  [r, g, b].map do |e|
+def rgb(*args)
+  args.map do |e|
     e < 0 ? e = 0 : e = e
     e > 255 ? e = 255 : e = e
     e.to_s(16).upcase.rjust(2, "0")
@@ -32,4 +32,12 @@ end
 
 def rgb(*c)
   "%02X%02X%02X" % c.map { |x| x.clamp(0..255).to_i }
+end
+
+
+# ALTERNATIVE
+#=======================================================================================
+
+def rgb(*args)
+  "%02X%02X%02X" % args.map{|n| [[n,255].min, 0].max}
 end
