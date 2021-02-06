@@ -4,7 +4,7 @@ require 'minitest/pride'
 require_relative '../lib/tickets'
 
 class TicketsTest < Minitest::Test
-  def test_it_adds_binary
+  def test_it
     assert_equal tickets([25, 25, 50]), 'YES'
     assert_equal tickets([25, 100]), 'NO'
     assert_equal tickets([25, 25, 50, 50, 100]), 'NO'

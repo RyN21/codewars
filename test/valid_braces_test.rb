@@ -4,7 +4,7 @@ require 'minitest/pride'
 require_relative '../lib/valid_braces'
 
 class ValidBracesTest < Minitest::Test
-  def test_it_adds_binary
+  def test_it
     assert_equal validBraces('(){}[]'), true
     assert_equal validBraces('({[]})'), true
     assert_equal validBraces('(]'), false

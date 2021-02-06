@@ -4,7 +4,7 @@ require 'minitest/pride'
 require_relative '../lib/fib_numbers'
 
 class FibNumbersTest < Minitest::Test
-  def test_it_adds_binary
+  def test_it
     assert_equal productFib(4895), [55, 89, true]
     assert_equal productFib(5895), [89, 144, false]
   end

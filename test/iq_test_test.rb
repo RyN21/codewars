@@ -4,7 +4,7 @@ require 'minitest/pride'
 require_relative '../lib/iq_test'
 
 class IqTestTest < Minitest::Test
-  def test_it_adds_binary
+  def test_it
     assert_equal iq_test("2 4 7 8 10"), 3
     assert_equal iq_test("1 2 2"), 1
     assert_equal iq_test("1 2 1 1"), 2

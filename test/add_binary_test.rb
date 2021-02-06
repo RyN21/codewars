@@ -4,7 +4,7 @@ require 'minitest/pride'
 require_relative '../lib/add_binary'
 
 class AddBinaryTest < Minitest::Test
-  def test_it_adds_binary
+  def test_it
     assert_equal add_binary(1,1), "10"
     assert_equal add_binary(0,1), "1"
     assert_equal add_binary(1,0), "1"
