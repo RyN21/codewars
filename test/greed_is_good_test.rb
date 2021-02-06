@@ -14,6 +14,9 @@ class GreedIsGoodTest < Minitest::Test
 
   def test_it_should_value_this_mixed_set_correctly
     assert_equal score( [2, 4, 4, 5, 4] ) == 450, "Should be 450"
+    assert_equal score( [5, 1, 3, 4, 1] ) == 250, "Should be 450"
+    assert_equal score( [1, 1, 1, 3, 1] ) == 1100, "Should be 450"
+    assert_equal score( [2, 4, 4, 5, 4] ) == 450, "Should be 450"
   end
 end
 
