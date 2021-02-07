@@ -13,7 +13,7 @@ def productFib(prod)
     p = fib[i] * fib[i+1]
     i += 1
   end
-  p == prod ? [fib[i - 1], fib[i], true] : [fib[i - 1], fib[i], false]
+  [fib[i - 1], fib[i], prod == fib[i - 1] * fib[i]]
 end
 
 
