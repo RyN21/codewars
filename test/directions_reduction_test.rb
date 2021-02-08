@@ -8,6 +8,9 @@ class DirectionsReductionTest < Minitest::Test
     a = ["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]
     assert_equal dirReduc(a), ["WEST"]
 
+    a = ["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"]
+    assert_equal dirReduc(a), ["SOUTH"]
+
     u = ["NORTH", "WEST", "SOUTH", "EAST"]
     assert_equal dirReduc(u), ["NORTH", "WEST", "SOUTH", "EAST"]
 
