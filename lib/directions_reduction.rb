@@ -3,7 +3,8 @@ require 'pry'
 def dirReduc(dir)
   i = 0
   until i > dir.length
-    if dir[i].length == dir[i+1].length && dir[i] != dir[i+1]
+
+    if !dir[i+1].nil? && dir[i].size == dir[i+1].size && dir[i] != dir[i+1]
       dir.delete_at(i + 1)
       dir.delete_at(i)
       i = 0
@@ -13,6 +14,7 @@ def dirReduc(dir)
   end
   dir
 end
+
 
 # def dirReduc(dir)
 #   i = 0
