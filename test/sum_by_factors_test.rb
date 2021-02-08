@@ -6,6 +6,7 @@ require_relative '../lib/sum_by_factors'
 class SumByFactorsTest < Minitest::Test
   def test_it
     assert_equal sumOfDivided([12, 15]), [ [2, 12], [3, 27], [5, 15] ]
+    assert_equal sumOfDivided([12, 15]), [ [2, 12], [3, 27], [5, 15] ]
   end
 end
 
