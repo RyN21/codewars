@@ -3,19 +3,7 @@ require 'pry'
 def dirReduc(dir)
   i = 0
   until i > dir.length
-    if dir[i] == "NORTH" && dir[i + 1] == "SOUTH"
-      dir.delete_at(i + 1)
-      dir.delete_at(i)
-      i = 0
-    elsif dir[i] == "SOUTH" && dir[i + 1] == "NORTH"
-      dir.delete_at(i + 1)
-      dir.delete_at(i)
-      i = 0
-    elsif dir[i] == "WEST" && dir[i + 1] == "EAST"
-      dir.delete_at(i + 1)
-      dir.delete_at(i)
-      i = 0
-    elsif dir[i] == "EAST" && dir[i + 1] == "WEST"
+    if dir[i].length == dir[i+1].length && dir[i] != dir[i+1]
       dir.delete_at(i + 1)
       dir.delete_at(i)
       i = 0
@@ -25,6 +13,32 @@ def dirReduc(dir)
   end
   dir
 end
+
+# def dirReduc(dir)
+#   i = 0
+#   until i > dir.length
+#     if dir[i] == "NORTH" && dir[i + 1] == "SOUTH"
+#       dir.delete_at(i + 1)
+#       dir.delete_at(i)
+#       i = 0
+#     elsif dir[i] == "SOUTH" && dir[i + 1] == "NORTH"
+#       dir.delete_at(i + 1)
+#       dir.delete_at(i)
+#       i = 0
+#     elsif dir[i] == "WEST" && dir[i + 1] == "EAST"
+#       dir.delete_at(i + 1)
+#       dir.delete_at(i)
+#       i = 0
+#     elsif dir[i] == "EAST" && dir[i + 1] == "WEST"
+#       dir.delete_at(i + 1)
+#       dir.delete_at(i)
+#       i = 0
+#     else
+#       i += 1
+#     end
+#   end
+#   dir
+# end
 
 
 # start with i = 0
