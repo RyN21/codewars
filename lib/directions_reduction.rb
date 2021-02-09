@@ -1,9 +1,11 @@
 require 'pry'
 
+# MY SOLUTION
+#=======================================================================================
+
 def dirReduc(dir)
   i = 0
   until i > dir.length
-
     if !dir[i+1].nil? && dir[i].size == dir[i+1].size && dir[i] != dir[i+1]
       dir.delete_at(i + 1)
       dir.delete_at(i)
@@ -14,6 +16,66 @@ def dirReduc(dir)
   end
   dir
 end
+
+
+# BEST PRACTICE
+#=======================================================================================
+
+OPPOSITE = {
+  "NORTH" => "SOUTH",
+  "SOUTH" => "NORTH",
+  "EAST"  => "WEST",
+  "WEST"  => "EAST"
+}
+
+def dirReduc(arr)
+  stack = []
+  arr.each do |dir|
+    OPPOSITE[dir] == stack.last ? stack.pop : stack.push(dir)
+  end
+  stack
+end
+
+
+# CLEVER
+#=======================================================================================
+
+def dirReduc(arr)
+  pat = /(NORTHSOUTH|SOUTHNORTH|EASTWEST|WESTEAST)/
+  way = arr.join
+  while way.index( pat ) do way.gsub!(pat,'') end
+  way.scan(/(NORTH|SOUTH|EAST|WEST)/).flatten
+end
+
+
+# ALTERNATIVE
+#=======================================================================================
+
+def dirReduc(arr)
+  a = arr.join(' ')
+  b = a.strip.gsub(/north south|south north|east west|west east/i, '')
+  b == a ? b.split(' ') : dirReduc(b.split(' '))
+end
+
+# ALTERNATIVE
+#=======================================================================================
+
+def dirReduc(arr)
+  str = arr.join
+  for i in 0..3
+  str = str.gsub(/(NORTHSOUTH)+/,"")
+  str = str.gsub(/(SOUTHNORTH)+/,"")
+  str = str.gsub(/(EASTWEST)+/,"")
+  str = str.gsub(/(WESTEAST)+/,"")
+  end
+  str = str.gsub(/TH/,"TH ")
+  str = str.gsub(/ST/,"ST ")
+  str.split(/ /)
+end
+
+
+# PSEUDO CODE
+#=======================================================================================
 
 
 # def dirReduc(dir)
