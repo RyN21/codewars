@@ -3,6 +3,9 @@ require 'pry'
 # MY SOLUTION
 #=======================================================================================
 
+def who_is_next(names, r)
+
+end
 
 
 # BEST PRACTICE
