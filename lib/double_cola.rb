@@ -4,10 +4,8 @@ require 'pry'
 #=======================================================================================
 
 def who_is_next(names, r)
-  colas = 0
-  until colas == r
+  r.times do
     names.push(names[0], names[0]).shift
-    colas += 1
   end
   names.last
 end
