@@ -10,6 +10,34 @@ def who_is_next(names, r)
   names.last
 end
 
+["Sheldon", "Leonard", "Penny", "Rajesh", "Howard"]
+
+1
+["Leonard", "Penny", "Rajesh", "Howard", "Sheldon", "Sheldon"]
+
+2
+["Penny", "Rajesh", "Howard", "Sheldon", "Sheldon", "Leonard", "Leonard"]
+
+3
+["Rajesh", "Howard", "Sheldon", "Sheldon", "Leonard", "Leonard", "Penny", "Penny"]
+
+3
+["Howard", "Sheldon", "Sheldon", "Leonard", "Leonard", "Penny", "Penny", "Rajesh", "Rajesh"]
+
+4
+["Sheldon", "Sheldon", "Leonard", "Leonard", "Penny", "Penny", "Rajesh", "Rajesh", "Howard", "Howard"]
+
+5
+["Sheldon", "Leonard", "Leonard", "Penny", "Penny", "Rajesh", "Rajesh", "Howard", "Howard", "Sheldon", "Sheldon"]
+
+6
+["Leonard", "Leonard", "Penny", "Penny", "Rajesh", "Rajesh", "Howard", "Howard", "Sheldon", "Sheldon", "Sheldon", "Sheldon"]
+
+7
+["Leonard", "Penny", "Penny", "Rajesh", "Rajesh", "Howard", "Howard", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Leonard", "Leonard"]
+
+8
+["Penny", "Penny", "Rajesh", "Rajesh", "Howard", "Howard", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Leonard", "Leonard", "Leonard", "Leonard"]
 
 # BEST PRACTICE
 #=======================================================================================
