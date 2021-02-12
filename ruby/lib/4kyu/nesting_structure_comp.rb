@@ -7,14 +7,20 @@ class Array
   def same_structure_as(a)
     new_a = convert_array(a)
     new_s = convert_array(self)
-    new_a == new_s ? "#{self.to_s.delete(" ")} same as #{a.to_s.delete(" ")}" : "#{self.to_s.delete(" ")} not same as #{a.to_s.delete(" ")}"
+    "#{self.to_s.delete(" ")} same as #{a.to_s.delete(" ")}" if new_a == new_s
+    "#{self.to_s.delete(" ")} not same as #{a.to_s.delete(" ")}" if new_a != new_s
   end
 
   def convert_array(a)
-    new = a.map do |e|
-      convert_array(e) if e.class == Array
-      e * 0
+    a.map do |e|
+      if e.class == Array
+        convert_array(e)
+      else
+        e = e * 0
+      end
     end
+    binding.pry
+    new
   end
 end
 
