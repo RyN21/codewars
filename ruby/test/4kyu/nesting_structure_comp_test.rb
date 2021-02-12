@@ -7,10 +7,9 @@ class NestingStructureCompTest < Minitest::Test
   def test_it
     assert_equal "[1,[1,1]] same as [2,[2,2]]", [1,[1,1]].same_structure_as([2,[2,2]])
     assert_equal "[1,1,1] same as [2,2,2]", [1, 1, 1].same_structure_as([ 2, 2, 2 ])
-    binding.pry
     assert_equal "[[[],[]]] same as [[[],[]]]", [[[],[]]].same_structure_as([[[],[]]])
     assert_equal "[1,[1,1]] not same as [[2,2],2]", ![1, [1, 1]].same_structure_as([[2, 2], 2])
-    assert_equal "[1,[1,1]] not same as [[2,2],2]", ![1, [1, 1]].same_structure_as([[2], 2])
+    assert_equal "[1,[1,1]] not same as [[2],2]", ![1, [1, 1]].same_structure_as([[2], 2])
   end
 end
 

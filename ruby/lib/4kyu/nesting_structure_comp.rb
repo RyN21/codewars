@@ -7,11 +7,7 @@ class Array
   def same_structure_as(a)
     new_a = convert_array(a)
     new_s = convert_array(self)
-    if new_a == new_s
-      "#{self.to_s.delete(" ")} same as #{a.to_s.delete(" ")}"
-    else
-      "#{self.to_s.delete(" ")} not same as #{a.to_s.delete(" ")}"
-    end
+    new_a == new_s ? "#{self.to_s.delete(" ")} same as #{a.to_s.delete(" ")}" : "#{self.to_s.delete(" ")} not same as #{a.to_s.delete(" ")}"
   end
 
   def convert_array(a)
