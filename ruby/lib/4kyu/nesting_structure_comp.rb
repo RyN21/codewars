@@ -5,13 +5,16 @@ require 'pry'
 
 class Array
   def same_structure_as(a)
-    self.convert_array
-    a.convert_array
-    self == a ? "#{self} same as #{a}" : "#{self} not same as #{a}"
+    new_a = convert_array(a)
+    new_s = convert_array(self)
+    new_a == new_s ? "#{self.to_s.delete(" ")} same as #{a.to_s.delete(" ")}" : "#{self.to_s.delete(" ")} not same as #{a.to_s.delete(" ")}"
   end
 
-  def convert_array
-
+  def convert_array(a)
+    new = a.map do |e|
+      convert_array(e) if e.class == Array
+      e * 0
+    end
   end
 end
 
@@ -29,26 +32,26 @@ end
 # PSUEDO CODE
 #=======================================================================================
 
-for the self array = convert every element to something like 'x' for instance
-if an element is an array, then keep it an array and convert every element inside to the same 'x'. and so on
-
-for the argu array = do the same thing as above
-
-then compare the two arrays to see if they are the same.
-
-Looks like these arrays consist of integers. So maybe we can convert every element to something simple like 0
-
-
-as for the code:
-
-class Array
-  def same_structure_as(a)
-    self.convert_array
-    a.convert_array
-    self == a ? "#{self} same as #{a}" : "#{self} not same as #{a}"
-  end
-
-  def convert_array(a)
-
-  end
-end
+# for the self array = convert every element to something like 'x' for instance
+# if an element is an array, then keep it an array and convert every element inside to the same 'x'. and so on
+#
+# for the argu array = do the same thing as above
+#
+# then compare the two arrays to see if they are the same.
+#
+# Looks like these arrays consist of integers. So maybe we can convert every element to something simple like 0
+#
+#
+# as for the code:
+#
+# class Array
+#   def same_structure_as(a)
+#     self.convert_array
+#     a.convert_array
+#     self == a ? "#{self} same as #{a}" : "#{self} not same as #{a}"
+#   end
+#
+#   def convert_array(a)
+#
+#   end
+# end
