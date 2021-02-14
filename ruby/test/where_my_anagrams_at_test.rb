@@ -1,3 +1,6 @@
+require 'test/unit/assertions'
+require_relative '../lib/where_my_anagrams_at'
+
 def testAnagrams(word, result, wrong)
   actual = anagrams(word, result + wrong)
   Test.assert_equals actual.to_set, result.to_set
