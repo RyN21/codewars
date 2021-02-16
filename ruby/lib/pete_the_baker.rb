@@ -4,9 +4,10 @@ require 'pry'
 #=======================================================================================
 
 def cakes(recipe, available)
-  cake = {}
+  cake = Hash.new
+  num_of_cakes = 0
   recipe.each do |i, a|
-
+    
     ava_a = available[i]
     cake[i] += 1 if ava_a > a
     binding.pry
