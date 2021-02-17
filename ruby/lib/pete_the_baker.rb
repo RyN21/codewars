@@ -4,16 +4,12 @@ require 'pry'
 #=======================================================================================
 
 def cakes(recipe, available)
-  cake = Hash.new
-  num_of_cakes = 0
-  recipe.each do |i, a|
-    
-    ava_a = available[i]
-    cake[i] += 1 if ava_a > a
-    binding.pry
+  count = []
+  cake = recipe.merge(available) do |key, r, a|
+    count << a / r
   end
+  count.min
 end
-
 
 # BEST PRACTICE
 #=======================================================================================
