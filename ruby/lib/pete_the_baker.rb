@@ -16,15 +16,31 @@ def cakes(recipe, available)
   count.min
 end
 
-# BEST PRACTICE
+# BEST PRACTICE  &&  CLEVER
 #=======================================================================================
 
+def cakes(recipe, available)
+  recipe.collect { | k, v | available[k].to_i / v }.min
+end
 
 
-# CLEVER
+# ALTERNATIVE
 #=======================================================================================
 
+def cakes(recipe, available)
+  recipe
+    .map { |(ingredient, qnty)| (available[ingredient] || 0) / qnty }
+    .min
+end
 
+
+# ALTERNATIVE
+#=======================================================================================
+
+def cakes(recipe, available)
+  available.default= 0
+  recipe.map { |k,v| available[k] / v }.min
+end
 
 
 # PSUEDO CODE
