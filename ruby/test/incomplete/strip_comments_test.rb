@@ -1,4 +1,3 @@
-require_relative '../lib/strip_comments'
 
 def checkComments(input, markers, expected)
   actual = solution(input, markers)
