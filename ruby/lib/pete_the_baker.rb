@@ -5,9 +5,7 @@ require 'pry'
 
 def cakes(recipe, available)
   count = []
-  missing = recipe.map do |k,_|
-    available.key?(k)
-  end
+  missing = recipe.map { |k,_| available.key?(k) }
   if !missing.include?(false)
     cake = recipe.merge(available) do |key, r, a|
       count << a / r
