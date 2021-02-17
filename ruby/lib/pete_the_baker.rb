@@ -5,8 +5,15 @@ require 'pry'
 
 def cakes(recipe, available)
   count = []
-  cake = recipe.merge(available) do |key, r, a|
-    count << a / r
+  missing = recipe.map do |k,_|
+    available.key?(k)
+  end
+  if !missing.include?(false)
+    cake = recipe.merge(available) do |key, r, a|
+      count << a / r
+    end
+  else
+    return 0
   end
   count.min
 end
