@@ -5,9 +5,12 @@ require_relative '../lib/memoized_fibonacci'
 
 class MemoizedFibonacciTest < Minitest::Test
   def test_it
-    assert_equal 12586269025, fibonacci(50)
-    assert_equal 1548008755920, fibonacci(60)
-    assert_equal 190392490709135, fibonacci(70)
+    assert_equal 3, fibonacci(4)
+    assert_equal 21, fibonacci(8)
+    assert_equal 55, fibonacci(10)
+    # assert_equal 12586269025, fibonacci(50)
+    # assert_equal 1548008755920, fibonacci(60)
+    # assert_equal 190392490709135, fibonacci(70)
   end
 end
 
@@ -19,7 +22,8 @@ end
 #   return n if (0..1).include? n
 #   fibonacci(n - 1) + fibonacci(n - 2)
 # end
-# This algorithm serves welll its educative purpose but it's tremendously inefficient,
+
+# This algorithm serves well its educative purpose but it's tremendously inefficient,
 # not only because of recursion, but because we invoke the fibonacci function
 # twice, and the right branch of recursion (i.e. fibonacci(n-2)) recalculates
 # all the Fibonacci numbers already calculated by the left branch (i.e. fibonacci(n-1)).
@@ -36,7 +40,7 @@ end
 # The trick of the memoized version is that we will keep a cache data
 # structure (most likely an associative array) where we will store the Fibonacci
 # numbers as we calculate them. When a Fibonacci number is calculated, we first
-# look it up in the cache, if it's not there, we calculate it and put it in the 
+# look it up in the cache, if it's not there, we calculate it and put it in the
 # cache, otherwise we returned the cached number.
 
 # Refactor the function into a recursive Fibonacci function that using a memoized
