@@ -5,10 +5,10 @@ require_relative '../lib/memoized_fibonacci'
 
 class MemoizedFibonacciTest < Minitest::Test
   def test_it
-    assert_equal 3, fibonacci(4)
+    # assert_equal 3, fibonacci(4)
     assert_equal 21, fibonacci(8)
     assert_equal 55, fibonacci(10)
-    # assert_equal 12586269025, fibonacci(50)
+    assert_equal 12586269025, fibonacci(50)
     # assert_equal 1548008755920, fibonacci(60)
     # assert_equal 190392490709135, fibonacci(70)
   end

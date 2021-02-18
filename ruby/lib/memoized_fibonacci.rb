@@ -5,7 +5,8 @@ require 'pry'
 
 def fibonacci(n)
   return n if (0..1).include? n
-  fibonacci(n - 1) + fibonacci(n - 2)
+  i = n
+  i ||= fibonacci(i - 1) + fibonacci(i - 2)
 end
 
 
@@ -23,11 +24,11 @@ end
 # PSUEDO CODE
 #=======================================================================================
 
-Using memoization ||=
-so taking the argument 'n'
-lets say 4 should return 3
-3 - 1 = 2
-3 - 2 = 1
-2 + 1 = 3
-
-49 + 48 = 97
+# Using memoization ||=
+# so taking the argument 'n'
+# lets say 4 should return 3
+# 3 - 1 = 2
+# 3 - 2 = 1
+# 2 + 1 = 3
+#
+# 49 + 48 = 97
