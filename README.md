@@ -5,3 +5,4 @@
 - The tests use Minitest. 
 - The challenge file consists of my original solution along with the best practice and most clever solution. 
 - Challenges are done in Ruby, Elixir, and Solidity
+- Files separated by kata difficulty. 
