@@ -23,6 +23,6 @@ end
 # PSUEDO CODE
 #=======================================================================================
 
-# Using memoization ||=
-# so taking the argument 'n'
-# lets say 50
+Using memoization ||=
+so taking the argument 'n'
+lets say 50
