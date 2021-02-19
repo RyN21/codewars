@@ -3,10 +3,10 @@ require 'pry'
 # MY SOLUTION
 #=======================================================================================
 
+[0, 1, 1, 2, 3, 5, 8, 13, 21]
+
 def fibonacci(n)
-  return n if (0..1).include? n
-  i = n
-  i ||= fibonacci(i - 1) + fibonacci(i - 2)
+
 end
 
 
