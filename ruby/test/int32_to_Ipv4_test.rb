@@ -8,6 +8,7 @@ class Int32ToIpv4Test < Minitest::Test
     assert_equal "128.114.17.104", int32_to_ip(2154959208)
     assert_equal "0.0.0.0", int32_to_ip(0)
     assert_equal "128.32.10.1", int32_to_ip(2149583361)
+    assert_equal "0.0.0.32", int32_to_ip(32)
   end
 end
 

@@ -4,7 +4,9 @@ require 'pry'
 #=======================================================================================
 
 def int32_to_ip(int32)
-
+  array = []
+  array << int32
+  array.pack("N").unpack("CCCC").join(".")
 end
 
 
