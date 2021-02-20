@@ -56,5 +56,11 @@ is whichever the array consisted off, so it will return the integer attached to 
 one test will check all the arrays and compare index spots. If all the arrays of the same index match with
 "X" or "O", then there is a winner and its whichever the indexed consisted off.
 
-So the two tests check for linear wins
-the next tests will need to check diaganols
+So the test above check for linear wins: up and down and sideways
+the next tests will need to check diagonals
+
+First test will check if the middle row middle index is the same as either:
+first row first index and last row last index OR
+first row last index and last row first index
+
+if no winner... then cat wins the game
