@@ -9,8 +9,24 @@ def is_solved(board)
       return r[0]
     end
   end
+  i = 0
+  indexes = []
+  until indexes.uniq.size == 1 && !indexes.include?(0)
+    board.each do |r|
+      indexes << r[i]
+    end
+    if indexes.uniq.size == 1 && !indexes.include?(0)
+      return indexes[0]
+    else
+      indexes = []
+      i += 1
+    end
+  end
 end
 
+# [0,0,1]
+# [0,1,2]
+# [2,1,0]
 
 # BEST PRACTICE
 #=======================================================================================
@@ -49,8 +65,6 @@ end
 #
 # we will want to compare many different possibilities
 #
-# one test will check if the board is even solved or not. If any array consists of the integer 0
-# then the board is not solved and will return -1
 #
 # if the board is solved it should now check to see if there is a winner or if its a cats game
 #
@@ -66,5 +80,8 @@ end
 # First test will check if the middle row middle index is the same as either:
 # first row first index and last row last index OR
 # first row last index and last row first index
+#
+# one test will check if the board is even solved or not. If any array consists of the integer 0
+# then the board is not solved and will return -1
 #
 # if no winner... then cat wins the game
