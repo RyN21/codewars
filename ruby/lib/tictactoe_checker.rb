@@ -4,18 +4,21 @@ require 'pry'
 #=======================================================================================
 
 def is_solved(board)
+  solved_horizontally?(board)
+  solved_vertically?(board)
+  solved_diagonally?(board)
+  cat?(board)
+end
+
+def solved_horizontally?(board)
   board.each do |r|
     if r.uniq.size == 1 && !r.include?(0)
       return r[0]
     end
   end
-  x = board[1][1]
-  if board[0][0] == x && board[2][2] == x
-    return x
-  elsif board [0][2] == x && board [2][0] == x
-    return x
-  end
-  # if board
+end
+
+def solved_vertically?(board)
   i = 0
   indexes = []
   3.times do
@@ -32,7 +35,19 @@ def is_solved(board)
       0
     end
   end
+end
 
+def solved_diagonally?(board)
+  x = board[1][1]
+  if board[0][0] == x && board[2][2] == x
+    return x
+  elsif board [0][2] == x && board [2][0] == x
+    return x
+  end
+end
+
+def cat?(board)
+  
 end
 
 # [0,0,1]
