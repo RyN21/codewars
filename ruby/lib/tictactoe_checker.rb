@@ -9,19 +9,30 @@ def is_solved(board)
       return r[0]
     end
   end
+  x = board[1][1]
+  if board[0][0] == x && board[2][2] == x
+    return x
+  elsif board [0][2] == x && board [2][0] == x
+    return x
+  end
+  # if board
   i = 0
   indexes = []
-  until indexes.uniq.size == 1 && !indexes.include?(0)
+  3.times do
     board.each do |r|
       indexes << r[i]
     end
     if indexes.uniq.size == 1 && !indexes.include?(0)
       return indexes[0]
+    elsif i == 2 && board[0].include?(0) || board[1].include?(0) || board[2].include?(0)
+      return -1
     else
       indexes = []
       i += 1
+      0
     end
   end
+
 end
 
 # [0,0,1]
