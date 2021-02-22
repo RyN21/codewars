@@ -4,10 +4,15 @@ require 'pry'
 #=======================================================================================
 
 def is_solved(board)
-  solved_horizontally?(board)
-  solved_vertically?(board)
-  solved_diagonally?(board)
-  cat?(board)
+  if solved_horizontally?(board) != false
+    solved_horizontally?(board)
+  elsif solved_vertically?(board) != false
+    solved_vertically?(board)
+  elsif solved_diagonally?(board) != false
+    solved_diagonally?(board)
+  else
+    cat?(board)
+  end
 end
 
 def solved_horizontally?(board)
@@ -16,6 +21,7 @@ def solved_horizontally?(board)
       return r[0]
     end
   end
+  false
 end
 
 def solved_vertically?(board)
@@ -27,14 +33,12 @@ def solved_vertically?(board)
     end
     if indexes.uniq.size == 1 && !indexes.include?(0)
       return indexes[0]
-    elsif i == 2 && board[0].include?(0) || board[1].include?(0) || board[2].include?(0)
-      return -1
     else
-      indexes = []
       i += 1
-      0
+      indexes = []
     end
   end
+  false
 end
 
 def solved_diagonally?(board)
@@ -44,10 +48,15 @@ def solved_diagonally?(board)
   elsif board [0][2] == x && board [2][0] == x
     return x
   end
+  false
 end
 
 def cat?(board)
-  
+  board.map do |r|
+    r.include?(0)
+    return -1
+  end
+  0
 end
 
 # [0,0,1]
