@@ -53,10 +53,9 @@ end
 
 def cat?(board)
   board.map do |r|
-    r.include?(0)
-    return -1
+    return 0 if !r.include?(0)
   end
-  0
+  -1
 end
 
 # [0,0,1]
