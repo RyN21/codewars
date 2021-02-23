@@ -13,6 +13,7 @@ class TicTacToeCheckerTest < Minitest::Test
     assert_equal 0, is_solved([[ 1,2,1],[2,1,1],[2,1,2]])
     assert_equal -1, is_solved([[2,1,2],[1,0,1],[2,2,0]])
     assert_equal -1, is_solved([[1,0,0],[1,2,0],[2,1,0]])
+    assert_equal -1, is_solved([[0,1,1],[1,2,1],[0,0,0]])
   end
 end
 
