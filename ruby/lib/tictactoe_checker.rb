@@ -13,7 +13,7 @@ def is_solved(board)
   elsif cat?(board) != false
     cat?(board)
   else
-    -1
+    0
   end
 end
 
@@ -55,8 +55,7 @@ end
 
 def cat?(board)
   board.each do |r|
-    binding.pry
-    return 0 if r.include?(0)
+    return -1 if r.include?(0)
   end
   false
 end
