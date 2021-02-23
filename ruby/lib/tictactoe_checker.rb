@@ -10,8 +10,10 @@ def is_solved(board)
     solved_vertically?(board)
   elsif solved_diagonally?(board) != false
     solved_diagonally?(board)
-  else
+  elsif cat?(board) != false
     cat?(board)
+  else
+    -1
   end
 end
 
@@ -52,10 +54,11 @@ def solved_diagonally?(board)
 end
 
 def cat?(board)
-  board.map do |r|
-    return 0 if !r.include?(0)
+  board.each do |r|
+    binding.pry
+    return 0 if r.include?(0)
   end
-  -1
+  false
 end
 
 # [0,0,1]
