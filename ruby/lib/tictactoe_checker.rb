@@ -44,7 +44,7 @@ def solved_vertically?(board)
 end
 
 def solved_diagonally?(board)
-  x = board[1][1]
+  x = board[1][1] if board[1][1] != 0
   if board[0][0] == x && board[2][2] == x
     return x
   elsif board [0][2] == x && board [2][0] == x
