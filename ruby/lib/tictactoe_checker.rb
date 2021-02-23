@@ -69,29 +69,74 @@ def unsolved?(board)
   false
 end
 
-# [0,0,1]
-# [0,1,2]
-# [2,1,0]
 
 # BEST PRACTICE
 #=======================================================================================
 
+def is_solved(board)
+  [board,board.transpose].each {|x| x.each {|r| return r[0] if r.uniq.size == 1 and r[0] != 0}}
+  [board, board.reverse].any? {|x| return x[0][0] if x.map.with_index {|e,i| e[i]}.uniq.size == 1 and x[0][0] != 0 }
+  board.any? {|r| r.any?(&:zero?)} ? -1 : 0
+end
 
 
 # CLEVER
 #=======================================================================================
 
+def is_solved(board)
+  case board.join
+  when /1..(1|.1.)..1|1.1.1..$|111(...)*$/ then 1
+  when /2..(2|.2.)..2|2.2.2..$|222(...)*$/ then 2
+  when /0/ then -1
+  else 0
+  end
+end
 
 
 # ALTERNATIVE
 #=======================================================================================
 
+def reduceCells cells
+  (cells.include? 0) ? 0 : cells.reduce(:+)
+end
+
+def is_solved(board)
+  redc = []
+  redc[0] = reduceCells(board[0])
+  redc[1] = reduceCells(board[1])
+  redc[2] = reduceCells(board[2])
+  redc[3] = reduceCells(board.transpose[0])
+  redc[4] = reduceCells(board.transpose[1])
+  redc[5] = reduceCells(board.transpose[2])
+  redc[6] = reduceCells([board[0][0], board[1][1], board[2][2]])
+  redc[7] = reduceCells([board[0][2], board[1][1], board[2][0]])
+
+  if redc.include? 3
+    return 1
+  elsif redc.include? 6
+    return 2
+  elsif redc.include? 0
+    return -1
+  end
+
+  return 0
+end
 
 
 # ALTERNATIVE
 #=======================================================================================
 
+def is_solved(board)
 
+    s = (0..2).map{ |x| board[x] }
+              .to_set.merge( (0..2).map{|y| (0..2).map{|x| board[x][y] }} )
+                     .merge([(0..2).map{|x| board[x][x]   },
+                             (0..2).map{|x| board[2-x][x] }])
+
+    return (s.include?([1,1,1])       ?  1
+          : s.include?([2,2,2])       ?  2
+          : board.flatten.include?(0) ? -1 : 0)
+end
 
 
 # PSUEDO CODE
