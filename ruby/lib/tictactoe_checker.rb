@@ -12,8 +12,8 @@ def is_solved(board)
     solved_diagonally?(board)
   elsif cat?(board) != false
     cat?(board)
-  else
-    0
+  elsif unsolved?(board) != false
+    unsolved?(board)
   end
 end
 
@@ -54,9 +54,18 @@ def solved_diagonally?(board)
 end
 
 def cat?(board)
-  board.each do |r|
-    return -1 if r.include?(0)
+  a = board.map do |r|
+    r.include?(0)
   end
+  return 0 if !a.include?(true)
+  false
+end
+
+def unsolved?(board)
+  a = board.map do |r|
+    r.include?(0)
+  end
+  return -1 if a.include?(true)
   false
 end
 
