@@ -5,14 +5,14 @@ require_relative '../lib/tictactoe_checker'
 
 class TicTacToeCheckerTest < Minitest::Test
   def test_it
-    # assert_equal 2, is_solved([[0,0,1],[2,2,2],[2,1,0]])
-    # assert_equal 1, is_solved([[1,0,2],[1,0,2],[1,0,0]])
-    # assert_equal 2, is_solved([[1,0,2],[0,1,2],[1,0,2]])
-    # assert_equal 1, is_solved([[1,0,1],[0,1,2],[2,1,1]])
-    # assert_equal -1, is_solved([[ 0,0,1],[0,1,2],[2,1,0]])
-    # assert_equal 0, is_solved([[ 1,2,1],[2,1,1],[2,1,2]])
-    # assert_equal -1, is_solved([[2,1,2],[1,0,1],[2,2,0]])
-    # assert_equal -1, is_solved([[1,0,0],[1,2,0],[2,1,0]])
+    assert_equal 2, is_solved([[0,0,1],[2,2,2],[2,1,0]])
+    assert_equal 1, is_solved([[1,0,2],[1,0,2],[1,0,0]])
+    assert_equal 2, is_solved([[1,0,2],[0,1,2],[1,0,2]])
+    assert_equal 1, is_solved([[1,0,1],[0,1,2],[2,1,1]])
+    assert_equal -1, is_solved([[ 0,0,1],[0,1,2],[2,1,0]])
+    assert_equal 0, is_solved([[ 1,2,1],[2,1,1],[2,1,2]])
+    assert_equal -1, is_solved([[2,1,2],[1,0,1],[2,2,0]])
+    assert_equal -1, is_solved([[1,0,0],[1,2,0],[2,1,0]])
     assert_equal -1, is_solved([[0,1,1],[0,0,0],[0,0,0]])
   end
 end
