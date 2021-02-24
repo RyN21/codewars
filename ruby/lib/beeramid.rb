@@ -4,6 +4,7 @@ require 'pry'
 #=======================================================================================
 
 def beeramid(bonus, price)
+  return 0 if bonus <= 0
   level = 1
   beers = bonus/price
   while beers >= 0
@@ -15,23 +16,53 @@ def beeramid(bonus, price)
 end
 
 
-# BEST PRACTICE
-#=======================================================================================
-
-
-
 # CLEVER
 #=======================================================================================
 
+def beeramid(bonus, price)
+  #(1..) in fresh ruby's versions
+  (1..Float::INFINITY).lazy.map{|🍺| 🍺*🍺}.take_while{|🍺| (bonus -= 🍺*price) >= 0}.count
+end
 
 
 # ALTERNATIVE
 #=======================================================================================
 
+def beeramid(bonus, price, level = 1)
+  return level - 1 if level ** 2 * price > bonus
+  beeramid(bonus - level ** 2 * price, price, level + 1)
+end
 
 
 # ALTERNATIVE
 #=======================================================================================
+
+def beeramid(bonus, price)
+  cans = bonus / price
+  level = 0
+  while cans > 0 do
+    cans -= (level + 1) ** 2
+    level += 1 if cans >= 0
+  end
+  level
+end
+
+
+# ALTERNATIVE
+#=======================================================================================
+
+def beeramid(bonus, price)
+  return 0 if bonus < 0
+  i = 1
+  while bonus > 0
+    bonus -= price * (i**2)
+    i += 1
+  end
+  return bonus < 0 ? i-2 : i-1
+end
+
+
+
 
 
 
