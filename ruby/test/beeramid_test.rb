@@ -10,6 +10,8 @@ class BeeramidTest < Minitest::Test
     assert_equal 3, beeramid(21, 1.5)
     assert_equal 12, beeramid(1500, 2)
     assert_equal 16, beeramid(5000, 3)
+    assert_equal 1, beeramid(3, 3)
+    assert_equal 0, beeramid(-1, 4)
   end
 end
 
