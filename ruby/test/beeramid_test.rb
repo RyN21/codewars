@@ -8,6 +8,8 @@ class BeeramidTest < Minitest::Test
     assert_equal 1, beeramid(9, 2)
     assert_equal 3, beeramid(21, 1.5)
     assert_equal 3, beeramid(21, 1.5)
+    assert_equal 12, beeramid(1500, 2)
+    assert_equal 16, beeramid(5000, 3)
   end
 end
 
@@ -21,7 +23,7 @@ end
 
 # A beer can pyramid will square the number of cans in each level - 1 can
 # in the top level, 4 in the second, 9 in the next, 16, 25...
-#
+
 # Complete the beeramid function to return the number of complete levels
 # of a beer can pyramid you can make, given the parameters of:
 
