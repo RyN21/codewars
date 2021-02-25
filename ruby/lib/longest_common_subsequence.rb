@@ -8,11 +8,10 @@ def lcs(x, y)
   ss = []
   x.length < y.length ? s = x.split("") : s = y.split("")
   s == x ? l = y.split("") : l = x.split("")
-  s.length.times do
-    s.each do |e|
-      ss << e if l.include?(e)
-      l.delete(e) if l.include?(e)
-    end
+  s.each do |e|
+    binding.pry
+    ss << e if l.include?(e)
+    l.delete_at(l.find_index(e)) if l.include?(e)
   end
   ss.join
 end
