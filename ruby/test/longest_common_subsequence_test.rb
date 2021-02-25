@@ -7,6 +7,7 @@ class BeeramidTest < Minitest::Test
   def test_it
     assert_equal "", lcs("a", "b")
     assert_equal "abc", lcs("abcdef", "abc")
+    assert_equal "12356", lcs("132535365","123456789")
   end
 end
 
