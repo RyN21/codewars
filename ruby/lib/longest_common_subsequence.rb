@@ -29,3 +29,7 @@ end
 
 # PSUEDO CODE
 #=======================================================================================
+
+take two strings and return the common subsequence
+initial thought is that we are going compare the 2 strings together
+split both strings into arrays to make it more easy to work with
