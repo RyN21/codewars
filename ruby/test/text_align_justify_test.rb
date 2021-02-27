@@ -1,9 +1,9 @@
 gem 'minitest', '~>5.2'
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative '../lib/longest_common_subsequence'
+require_relative '../lib/text_align_justify'
 
-class BeeramidTest < Minitest::Test
+class TextAlignJustifyTest < Minitest::Test
   def test_it
     assert_equal "123  45\n6", justify('123 45 6', 7)
   end
