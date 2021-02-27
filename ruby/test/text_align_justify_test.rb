@@ -55,6 +55,7 @@ end
 # fringilla,   ante  odio  porta
 # lacus,   ut   elementum  justo
 # nulla et dolor.
+
 # Also you can always take a look at how justification works in your text editor or
 # directly in HTML (css: text-align: justify).
 
