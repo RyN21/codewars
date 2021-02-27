@@ -9,9 +9,11 @@ class BeeramidTest < Minitest::Test
   end
 end
 
-Your task in this Kata is to emulate text justification in monospace font. You will be given a single-lined text and the expected justification width. The longest word will never be greater than this width.
+# Your task in this Kata is to emulate text justification in monospace font.
+# You will be given a single-lined text and the expected justification width.
+# The longest word will never be greater than this width.
 
-Here are the rules:
+# Here are the rules:
 
 # Use spaces to fill in the gaps between words.
 # Each line should contain as many words as possible.
