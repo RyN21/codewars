@@ -10,30 +10,58 @@ def lcs(x, y)
   x.length < y.length ? s = x.split("") : s = y.split("")
   s.length == x.split("").length ? l = y.split("") : l = x.split("")
   s.each do |e|
-    ss << e if l.include?(e) 
+    ss << e if l.include?(e)
     l.delete_at(l.find_index(e)) if l.include?(e)
   end
   ss.sort.join
 end
 
-# CLEVER
+# BEST PRACTICE  &&  CLEVER
 #=======================================================================================
 
+def subsequences(str)
+  (1..str.length).map { |i| str.chars.combination(i).to_a.map(&:join) }.flatten(1)
+end
+
+def lcs(x, y)
+  (subsequences(x) & subsequences(y)).max { |s| s.length } || ""
+end
 
 
 # ALTERNATIVE
 #=======================================================================================
 
+def lcs(x, y)
+  return "" if x.empty? || y.empty?
+  return x[0] + lcs(x[1..-1], y[1..-1]) if x[0] == y[0]
+
+  return [lcs(x[1..-1], y), lcs(x, y[1..-1])].max_by(&:length)
+end
 
 
 # ALTERNATIVE
 #=======================================================================================
 
+def lcs(x, y)
+  x, y = [x,y].sort.map(&:chars)
+  x.size.downto(0) do | ec |
+    x.combination(ec) { | xv | if y.combination(ec).include?(xv); return xv.join(''); end }
+  end
+end
 
 
 # ALTERNATIVE
 #=======================================================================================
 
+def lcs(x, y)
+  if x.empty? or y.empty?
+    ''
+  elsif x[-1] == y[-1]
+    lcs(x[0...-1], y[0...-1]) + x[-1]
+  else
+    [lcs(x, y[0...-1]), lcs(x[0...-1], y)].max_by(&:length)
+  end
+end
 
 
 # PSUEDO CODE
