@@ -5,11 +5,12 @@ require 'pry'
 #=======================================================================================
 
 def lcs(x, y)
+  binding.pry
   ss = []
   x.length < y.length ? s = x.split("") : s = y.split("")
   s.length == x.split("").length ? l = y.split("") : l = x.split("")
   s.each do |e|
-    ss << e if l.include?(e)
+    ss << e if l.include?(e) 
     l.delete_at(l.find_index(e)) if l.include?(e)
   end
   ss.sort.join
