@@ -7,13 +7,12 @@ require 'pry'
 def lcs(x, y)
   ss = []
   x.length < y.length ? s = x.split("") : s = y.split("")
-  s == x ? l = y.split("") : l = x.split("")
+  s.length == x.split("").length ? l = y.split("") : l = x.split("")
   s.each do |e|
-    binding.pry
     ss << e if l.include?(e)
     l.delete_at(l.find_index(e)) if l.include?(e)
   end
-  ss.join
+  ss.sort.join
 end
 
 # CLEVER
