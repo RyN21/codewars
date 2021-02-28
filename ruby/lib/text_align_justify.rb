@@ -6,9 +6,17 @@ require 'pry'
 def justify(text, width)
   text_length = text.length
   index = 6
-  new_text = text.chars.insert(index, "\n").join
+  new_text = text.chars.map do
   new_text
   binding.pry
+end
+
+def add_lines(text, width)
+
+end
+
+def space_lines(text, width)
+
 end
 
 # BEST PRACTICE  &&  CLEVER
