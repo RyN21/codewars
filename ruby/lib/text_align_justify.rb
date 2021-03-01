@@ -4,18 +4,22 @@ require 'pry'
 #=======================================================================================
 
 def justify(text, width)
-  text_length = text.length
-  index = 6
-  new_text = text.chars.insert(index, "\n").join
-  lines = new_text.split(("\n"))
-  lines.map do |line|
-    if line.size < width
-      line.gsub(/ /, '  ').concat("\n")
-    elsif line.chars.length == 1 || line.chars.length == 2 && line.chars.include?(" ")
-      line.delete(' ')
-    end
-  end.join
+  
 end
+
+# def justify(text, width)
+#   text_length = text.length
+#   index = 6
+#   new_text = text.chars.insert(index, "\n").join
+#   lines = new_text.split(("\n"))
+#   lines.map do |line|
+#     if line.size < width
+#       line.gsub(/ /, '  ').concat("\n")
+#     elsif line.chars.length == 1 || line.chars.length == 2 && line.chars.include?(" ")
+#       line.delete(' ')
+#     end
+#   end.join
+# end
 
 # def add_lines(text, width)
 #
