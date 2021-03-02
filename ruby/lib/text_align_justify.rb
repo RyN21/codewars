@@ -4,7 +4,8 @@ require 'pry'
 #=======================================================================================
 
 def justify(text, width)
-  
+  text_length = text.width
+  index = 6
 end
 
 # def justify(text, width)
