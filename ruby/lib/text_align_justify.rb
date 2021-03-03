@@ -25,10 +25,14 @@ end
 def space_lines(text, width)
   text.split("\n").map do |l|
     until l.length == 7
-      binding.pry
+      
     end
     return l if l.chars.last == " "
   end
+end
+
+def add_space(text)
+
 end
 
 # def justify(text, width)
