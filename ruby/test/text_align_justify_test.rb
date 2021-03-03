@@ -7,7 +7,7 @@ class TextAlignJustifyTest < Minitest::Test
   def test_it
     assert_equal "123  45\n6", justify('123 45 6', 7)
     assert_equal "12    3\n452   6", justify('12 3 452 6', 7)
-    assert_equal "1 2   3\n452   6", justify('1 2 3 452 6', 7)
+    assert_equal "1  2  3\n452   6", justify('1 2 3 452 6', 7)
   end
 end
 

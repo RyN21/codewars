@@ -34,7 +34,8 @@ end
 
 def add_spaces(text, width)
   until text.length == width
-  binding.pry
+    binding.pry
+  end
 end
 
 def correct_length?(text, width)
