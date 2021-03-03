@@ -33,14 +33,19 @@ def space_lines(text, width)
 end
 
 def add_spaces(text, width)
-  until text.length == width
-    binding.pry
+  total_words = text.split(" ").count
+  i = 0
+  binding.pry
+  until text.length >= width && i < total_words
+    text.split(" ")[i].concat(" ")
+    i += 1
   end
 end
 
 def correct_length?(text, width)
   text.chars.last == " " || text.chars.length == width
 end
+
 
 
 # def justify(text, width)
