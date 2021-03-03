@@ -24,9 +24,17 @@ end
 
 def space_lines(text, width)
   text.split("\n").map do |l|
-    return l if correct_length?(l, width)
+    if correct_length?(l, width)
+      l
+    else
+      add_spaces(l, width)
+    end
+  end.join("\n")
+end
 
-  end
+def add_spaces(text, width)
+  until text.length == width
+  binding.pry
 end
 
 def correct_length?(text, width)
