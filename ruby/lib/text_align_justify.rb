@@ -15,7 +15,10 @@ def add_lines(text, width)
   if text_array[index] == " "
     text_array[index] = "\n"
   elsif text_array[index] != " "
-
+    until text_array[index] == " "
+      index -= 1
+    end
+    text_array[index] = "\n"
   end
   text_array.join
 end
