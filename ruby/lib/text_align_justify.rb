@@ -4,8 +4,24 @@ require 'pry'
 #=======================================================================================
 
 def justify(text, width)
-  text_length = text.width
-  index = 6
+  text_length = text.length
+  binding.pry
+  add_lines(text, width)
+end
+
+def add_lines(text, width)
+  index = width - 1
+  text_array = text.chars
+  if text_array[index] == " "
+    text_array[index] = "\n"
+  elsif text_array[index] != " "
+
+  end
+  text_array.join
+end
+
+def space_lines(text, width)
+
 end
 
 # def justify(text, width)
@@ -22,13 +38,6 @@ end
 #   end.join
 # end
 
-# def add_lines(text, width)
-#
-# end
-#
-# def space_lines(text, width)
-#
-# end
 
 # BEST PRACTICE  &&  CLEVER
 #=======================================================================================
