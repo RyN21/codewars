@@ -5,8 +5,7 @@ require 'pry'
 
 def justify(text, width)
   text_length = text.length
-  binding.pry
-  add_lines(text, width)
+  space_lines(add_lines(text, width), width)
 end
 
 def add_lines(text, width)
@@ -24,7 +23,12 @@ def add_lines(text, width)
 end
 
 def space_lines(text, width)
-
+  text.split("\n").map do |l|
+    return l if l.chars.last == " "
+    until l.length == 7
+      binding.pry
+    end
+  end
 end
 
 # def justify(text, width)
