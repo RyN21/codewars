@@ -1,4 +1,4 @@
-# Codewars
+## Codewars
 
 - This is a collection of code challenges from the application 'codewars.com'. 
 - Each challenge has a file with a corresponding test file. 
