@@ -45,7 +45,6 @@ def whoIsNext(names, can)
 end
 
 
-
 # PSEUDO CODE
 #=======================================================================================
 
@@ -63,65 +62,65 @@ end
 # return
 # end loop
 
-1
-["Sheldon", "Leonard", "Penny", "Rajesh", "Howard"]
+# 1
+# ["Sheldon", "Leonard", "Penny", "Rajesh", "Howard"]
 
-2
-["Leonard", "Penny", "Rajesh", "Howard", "Sheldon", "Sheldon"]
+# 2
+# ["Leonard", "Penny", "Rajesh", "Howard", "Sheldon", "Sheldon"]
 
-3
-["Penny", "Rajesh", "Howard", "Sheldon", "Sheldon", "Leonard", "Leonard"]
+# 3
+# ["Penny", "Rajesh", "Howard", "Sheldon", "Sheldon", "Leonard", "Leonard"]
 
-4
-["Rajesh", "Howard", "Sheldon", "Sheldon", "Leonard", "Leonard", "Penny", "Penny"]
+# 4
+# ["Rajesh", "Howard", "Sheldon", "Sheldon", "Leonard", "Leonard", "Penny", "Penny"]
 
-5
-["Howard", "Sheldon", "Sheldon", "Leonard", "Leonard", "Penny", "Penny", "Rajesh", "Rajesh"]
+# 5
+# ["Howard", "Sheldon", "Sheldon", "Leonard", "Leonard", "Penny", "Penny", "Rajesh", "Rajesh"]
 
-6
-["Sheldon", "Sheldon", "Leonard", "Leonard", "Penny", "Penny", "Rajesh", "Rajesh", "Howard", "Howard"]
+# 6
+# ["Sheldon", "Sheldon", "Leonard", "Leonard", "Penny", "Penny", "Rajesh", "Rajesh", "Howard", "Howard"]
 
-7
-["Sheldon", "Leonard", "Leonard", "Penny", "Penny", "Rajesh", "Rajesh", "Howard", "Howard", "Sheldon", "Sheldon"]
+# 7
+# ["Sheldon", "Leonard", "Leonard", "Penny", "Penny", "Rajesh", "Rajesh", "Howard", "Howard", "Sheldon", "Sheldon"]
 
-8
-["Leonard", "Leonard", "Penny", "Penny", "Rajesh", "Rajesh", "Howard", "Howard", "Sheldon", "Sheldon", "Sheldon", "Sheldon"]
+# 8
+# ["Leonard", "Leonard", "Penny", "Penny", "Rajesh", "Rajesh", "Howard", "Howard", "Sheldon", "Sheldon", "Sheldon", "Sheldon"]
 
-9
-["Leonard", "Penny", "Penny", "Rajesh", "Rajesh", "Howard", "Howard", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Leonard", "Leonard"]
+# 9
+# ["Leonard", "Penny", "Penny", "Rajesh", "Rajesh", "Howard", "Howard", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Leonard", "Leonard"]
 
-11
-["Penny", "Penny", "Rajesh", "Rajesh", "Howard", "Howard", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Leonard", "Leonard", "Leonard", "Leonard"]
+# 11
+# ["Penny", "Penny", "Rajesh", "Rajesh", "Howard", "Howard", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Leonard", "Leonard", "Leonard", "Leonard"]
 
-12
-["Penny", "Rajesh", "Rajesh", "Howard", "Howard", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Leonard", "Leonard", "Leonard", "Leonard", "Penny", "Penny"]
+# 12
+# ["Penny", "Rajesh", "Rajesh", "Howard", "Howard", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Leonard", "Leonard", "Leonard", "Leonard", "Penny", "Penny"]
 
-13
-["Rajesh", "Rajesh", "Howard", "Howard", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Leonard", "Leonard", "Leonard", "Leonard", "Penny", "Penny", "Penny", "Penny"]
+# 13
+# ["Rajesh", "Rajesh", "Howard", "Howard", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Leonard", "Leonard", "Leonard", "Leonard", "Penny", "Penny", "Penny", "Penny"]
 
-14
-["Rajesh", "Howard", "Howard", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Leonard", "Leonard", "Leonard", "Leonard", "Penny", "Penny", "Penny", "Penny", "Rajesh", "Rajesh"]
+# 14
+# ["Rajesh", "Howard", "Howard", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Leonard", "Leonard", "Leonard", "Leonard", "Penny", "Penny", "Penny", "Penny", "Rajesh", "Rajesh"]
 
-15
-["Howard", "Howard", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Leonard", "Leonard", "Leonard", "Leonard", "Penny", "Penny", "Penny", "Penny", "Rajesh", "Rajesh", "Rajesh", "Rajesh"]
+# 15
+# ["Howard", "Howard", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Leonard", "Leonard", "Leonard", "Leonard", "Penny", "Penny", "Penny", "Penny", "Rajesh", "Rajesh", "Rajesh", "Rajesh"]
 
-16
-["Howard", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Leonard", "Leonard", "Leonard", "Leonard", "Penny", "Penny", "Penny", "Penny", "Rajesh", "Rajesh", "Rajesh", "Rajesh", "Howard", "Howard"]
+# 16
+# ["Howard", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Leonard", "Leonard", "Leonard", "Leonard", "Penny", "Penny", "Penny", "Penny", "Rajesh", "Rajesh", "Rajesh", "Rajesh", "Howard", "Howard"]
 
-17
-["Sheldon", "Sheldon", "Sheldon", "Sheldon", "Leonard", "Leonard", "Leonard", "Leonard", "Penny", "Penny", "Penny", "Penny", "Rajesh", "Rajesh", "Rajesh", "Rajesh", "Howard", "Howard", "Howard", "Howard"]
+# 17
+# ["Sheldon", "Sheldon", "Sheldon", "Sheldon", "Leonard", "Leonard", "Leonard", "Leonard", "Penny", "Penny", "Penny", "Penny", "Rajesh", "Rajesh", "Rajesh", "Rajesh", "Howard", "Howard", "Howard", "Howard"]
 
-18
-["Sheldon", "Sheldon", "Sheldon", "Leonard", "Leonard", "Leonard", "Leonard", "Penny", "Penny", "Penny", "Penny", "Rajesh", "Rajesh", "Rajesh", "Rajesh", "Howard", "Howard", "Howard", "Howard", "Sheldon", "Sheldon"]
+# 18
+# ["Sheldon", "Sheldon", "Sheldon", "Leonard", "Leonard", "Leonard", "Leonard", "Penny", "Penny", "Penny", "Penny", "Rajesh", "Rajesh", "Rajesh", "Rajesh", "Howard", "Howard", "Howard", "Howard", "Sheldon", "Sheldon"]
 
-19
-["Sheldon", "Sheldon", "Leonard", "Leonard", "Leonard", "Leonard", "Penny", "Penny", "Penny", "Penny", "Rajesh", "Rajesh", "Rajesh", "Rajesh", "Howard", "Howard", "Howard", "Howard", "Sheldon", "Sheldon", "Sheldon", "Sheldon"]
+# 19
+# ["Sheldon", "Sheldon", "Leonard", "Leonard", "Leonard", "Leonard", "Penny", "Penny", "Penny", "Penny", "Rajesh", "Rajesh", "Rajesh", "Rajesh", "Howard", "Howard", "Howard", "Howard", "Sheldon", "Sheldon", "Sheldon", "Sheldon"]
 
-20
-["Sheldon", "Leonard", "Leonard", "Leonard", "Leonard", "Penny", "Penny", "Penny", "Penny", "Rajesh", "Rajesh", "Rajesh", "Rajesh", "Howard", "Howard", "Howard", "Howard", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Sheldon"]
+# 20
+# ["Sheldon", "Leonard", "Leonard", "Leonard", "Leonard", "Penny", "Penny", "Penny", "Penny", "Rajesh", "Rajesh", "Rajesh", "Rajesh", "Howard", "Howard", "Howard", "Howard", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Sheldon"]
 
-21
-["Leonard", "Leonard", "Leonard", "Leonard", "Penny", "Penny", "Penny", "Penny", "Rajesh", "Rajesh", "Rajesh", "Rajesh", "Howard", "Howard", "Howard", "Howard", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Sheldon"]
+# 21
+# ["Leonard", "Leonard", "Leonard", "Leonard", "Penny", "Penny", "Penny", "Penny", "Rajesh", "Rajesh", "Rajesh", "Rajesh", "Howard", "Howard", "Howard", "Howard", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Sheldon"]
 
-22
-["Leonard", "Leonard", "Leonard", "Penny", "Penny", "Penny", "Penny", "Rajesh", "Rajesh", "Rajesh", "Rajesh", "Howard", "Howard", "Howard", "Howard", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Leonard", "Leonard"]
+# 22
+# ["Leonard", "Leonard", "Leonard", "Penny", "Penny", "Penny", "Penny", "Rajesh", "Rajesh", "Rajesh", "Rajesh", "Howard", "Howard", "Howard", "Howard", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Sheldon", "Leonard", "Leonard"]
