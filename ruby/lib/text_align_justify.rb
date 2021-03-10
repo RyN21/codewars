@@ -38,11 +38,16 @@ def add_spaces(text, width)
   total_spaces = total_words - 1
   spaces_needed = width - total_spots
   split_spaces = spaces_needed.to_f / total_spaces
-  binding.pry
-  until text.length >= width && i < total_words
-    text.split(" ")[i].concat(" ")
-    i += 1
+  space = " "
+  spaces_needed.times do
+    index
+    binding.pry
+
   end
+  # until text.length >= width && i < total_words
+  #   text.split(" ")[i].concat(" ")
+  #   i += 1
+  # end
 end
 
 def correct_length?(text, width)
