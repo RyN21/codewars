@@ -36,6 +36,8 @@ def add_spaces(text, width)
   total_words = text.split(" ").count
   total_spots = text.split("").count
   total_spaces = total_words - 1
+  spaces_needed = width - total_spots
+  split_spaces = spaces_needed.to_f / total_spaces
   binding.pry
   until text.length >= width && i < total_words
     text.split(" ")[i].concat(" ")
