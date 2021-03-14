@@ -40,7 +40,7 @@ def add_spaces(text, width)
   split_spaces = spaces_needed.to_f / total_spaces
   space = " "
   spaces_needed.times do
-    index
+    
     binding.pry
 
   end
