@@ -1,7 +1,7 @@
 gem 'minitest', '~>5.2'
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative '../lib/tickets'
+require_relative '../lib/6kyu/tickets'
 
 class TicketsTest < Minitest::Test
   def test_it

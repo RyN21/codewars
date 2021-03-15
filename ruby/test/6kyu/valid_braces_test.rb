@@ -1,7 +1,7 @@
 gem 'minitest', '~>5.2'
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative '../lib/valid_braces'
+require_relative '../lib/6kyu/valid_braces'
 
 class ValidBracesTest < Minitest::Test
   def test_it
