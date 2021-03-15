@@ -1,7 +1,7 @@
 gem 'minitest', '~>5.2'
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative '../lib/add_binary'
+require_relative '../lib/7kyu/add_binary'
 
 class AddBinaryTest < Minitest::Test
   def test_it
