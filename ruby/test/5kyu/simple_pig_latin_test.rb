@@ -1,7 +1,7 @@
 gem 'minitest', '~>5.2'
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative '../lib/simple_pig_latin'
+require_relative '../lib/5kyu/simple_pig_latin'
 
 class PigItTest < Minitest::Test
   def test_it

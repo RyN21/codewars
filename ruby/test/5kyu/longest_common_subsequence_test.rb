@@ -1,7 +1,7 @@
 gem 'minitest', '~>5.2'
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative '../lib/longest_common_subsequence'
+require_relative '../lib/5kyu/longest_common_subsequence'
 
 class BeeramidTest < Minitest::Test
   def test_it

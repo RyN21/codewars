@@ -1,7 +1,7 @@
 gem 'minitest', '~>5.2'
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative '../lib/beeramid'
+require_relative '../lib/5kyu/beeramid'
 
 class BeeramidTest < Minitest::Test
   def test_it

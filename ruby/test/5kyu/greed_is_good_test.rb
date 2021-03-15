@@ -1,7 +1,7 @@
 gem 'minitest', '~>5.2'
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative '../lib/greed_is_good'
+require_relative '../lib/5kyu/greed_is_good'
 
 class GreedIsGoodTest < Minitest::Test
   def test_it_should_value_this_as_worthless

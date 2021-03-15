@@ -1,7 +1,7 @@
 gem 'minitest', '~>5.2'
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative '../lib/directions_reduction'
+require_relative '../lib/5kyu/directions_reduction'
 
 class DirectionsReductionTest < Minitest::Test
   def test_it

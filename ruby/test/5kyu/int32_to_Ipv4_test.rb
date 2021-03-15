@@ -1,7 +1,7 @@
 gem 'minitest', '~>5.2'
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative '../lib/int32_to_Ipv4'
+require_relative '../lib/5kyu/int32_to_Ipv4'
 
 class Int32ToIpv4Test < Minitest::Test
   def test_it
