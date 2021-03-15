@@ -1,5 +1,5 @@
 require 'test/unit/assertions'
-require_relative '../lib/where_my_anagrams_at'
+require_relative '../lib/incomplete/where_my_anagrams_at'
 
 def testAnagrams(word, result, wrong)
   actual = anagrams(word, result + wrong)

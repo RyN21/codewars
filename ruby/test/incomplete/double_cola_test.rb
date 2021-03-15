@@ -1,7 +1,7 @@
 gem 'minitest', '~>5.2'
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative '../lib/double_cola'
+require_relative '../lib/incomplete/double_cola'
 
 class DoubleColaTest < Minitest::Test
   def test_it

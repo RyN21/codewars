@@ -1,7 +1,7 @@
 gem 'minitest', '~>5.2'
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative '../lib/text_align_justify'
+require_relative '../lib/incomplete/text_align_justify'
 
 class TextAlignJustifyTest < Minitest::Test
   def test_it

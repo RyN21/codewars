@@ -1,7 +1,7 @@
 gem 'minitest', '~>5.2'
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative '../lib/memoized_fibonacci'
+require_relative '../lib/incomplete/memoized_fibonacci'
 
 class MemoizedFibonacciTest < Minitest::Test
   def test_it
