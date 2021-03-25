@@ -19,3 +19,11 @@ end
 
 # PSUEDO CODE
 #=======================================================================================
+
+Steps to go about this problem:
+- Take in the text argument
+- convert argument to an array
+- create a hash that will contain each unique word as the key and the number
+of times it occurs as the value
+- return the top 3 in an array
+  - or top 2, 1, or empty array if no words are in 'text'
