@@ -37,6 +37,6 @@ def top_3_words(text)
     value += 1 if t already exists
   end
   3.times do
-    return_aray << new_hash where max value then delete this pair
+    return_aray << new_hash.key where new_hash.value is the max then delete this pair
   end
 end
