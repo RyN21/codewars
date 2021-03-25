@@ -27,3 +27,16 @@ Steps to go about this problem:
 of times it occurs as the value
 - return the top 3 in an array
   - or top 2, 1, or empty array if no words are in 'text'
+
+def top_3_words(text)
+  text_array = text to array
+  new_hash  = Hash.new
+  return_aray = []
+  text_array.each do |t|
+    throw t into new_hash and add a counter to it
+    value += 1 if t already exists
+  end
+  3.times do
+    return_aray << new_hash where max value then delete this pair
+  end
+end
