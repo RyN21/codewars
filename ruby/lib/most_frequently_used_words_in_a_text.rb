@@ -4,6 +4,10 @@ require 'pry'
 #=======================================================================================
 
 def top_3_words(text)
+  hash = Hash.new(0)
+  text.split(" ").each do |e|
+    hash[e] += 1
+  end
   binding.pry
 end
 
