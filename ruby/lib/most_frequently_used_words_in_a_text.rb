@@ -6,25 +6,24 @@ require 'pry'
 def top_3_words(text)
   top_3 = []
   hash = Hash.new(0)
-  text.split(" ").each do |e|
+  text.downcase.split(" ").each do |e|
     hash[e] += 1
   end
   count = hash.count
   if count >= 3
     3.times do
-      top_3 << hash.max[0]
-      hash.delete(hash.max[0])
-      binding.pry
+      top_3 << hash.key(hash.values.max)
+      hash.delete(hash.key(hash.values.max))
     end
   elsif count = 2
     2.times do
-      top_3 << hash.max[0]
-      hash.delete(hash.max[0])
+      top_3 << hash.key(hash.values.max)
+      hash.delete(hash.key(hash.values.max))
     end
   elsif count = 1
     1.times do
-      top_3 << hash.max[0]
-      hash.delete(hash.max[0])
+      top_3 << hash.key(hash.values.max)
+      hash.delete(hash.key(hash.values.max))
     end
   else
     top_3
