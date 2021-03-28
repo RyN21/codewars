@@ -9,20 +9,14 @@ def top_3_words(text)
   text.downcase.split(" ").each do |e|
     hash[e] += 1
   end
-  count = hash.count
-  if count >= 3
+  if hash.count >= 3
     3.times do
-      top_3 << hash.key(hash.values.max)
+      top_3 << hash.key(hash.values.max) if hash.key(hash.values.max).count("a-z") > 0
       hash.delete(hash.key(hash.values.max))
     end
-  elsif count = 2
-    2.times do
-      top_3 << hash.key(hash.values.max)
-      hash.delete(hash.key(hash.values.max))
-    end
-  elsif count = 1
-    1.times do
-      top_3 << hash.key(hash.values.max)
+  elsif hash.count < 3 && !hash.empty?
+    hash.count.times do
+      top_3 << hash.key(hash.values.max) if hash.key(hash.values.max).count("a-z") > 0
       hash.delete(hash.key(hash.values.max))
     end
   else
