@@ -7,6 +7,7 @@ def top_3_words(text)
   top_3 = []
   hash = Hash.new(0)
   text.downcase.split(" ").each do |e|
+    binding.pry
     hash[e] += 1
   end
   if hash.count >= 3
