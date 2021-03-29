@@ -31,7 +31,7 @@ def top_3_words(text)
 end
 
 
-# BEST PRACTICE  &&  CLEVER
+# BEST PRACTICE
 #=======================================================================================
 
 def top_3_words(text)
@@ -44,10 +44,11 @@ def top_3_words(text)
 end
 
 
-# ALTERNATIVE
+# CLEVER
 #=======================================================================================
 
 def top_3_words(text)
+  binding.pry
   text.downcase.scan(/\w+[\w']*/)
                .inject(Hash.new(0)){|h,w|h[w]+=1;h}
                .sort_by{|k,v|-v}
