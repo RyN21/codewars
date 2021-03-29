@@ -7,11 +7,11 @@ def top_3_words(text)
   top_3 = []
   hash = Hash.new(0)
   text.downcase.split(" ").each do |e|
-    new_e = nil
-    until new_e.chars.first.count("a-z") < 0
-      new_e = e[1..-1]
+    if e.chars.first.count("a-z") == 0 && e.count("a-z") > 0
+      until e.chars.first.count("a-z") > 0
+        e = e[1..-1]
+      end
     end
-    binding.pry
     hash[e] += 1
   end
   if hash.count >= 3

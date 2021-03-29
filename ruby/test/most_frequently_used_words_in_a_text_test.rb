@@ -5,8 +5,8 @@ require_relative '../lib/most_frequently_used_words_in_a_text'
 
 class MostFrequentlyUsedWordsInATextTest < Minitest::Test
   def test_it
-    # assert_equal ["e", "d", "a"], top_3_words("a a a  b  c c  d d d d  e e e e e")
-    # assert_equal ["e", "ddd", "aa"], top_3_words("e e e e DDD ddd DdD: ddd ddd aa aA Aa, bb cc cC e e e")
+    assert_equal ["e", "d", "a"], top_3_words("a a a  b  c c  d d d d  e e e e e")
+    assert_equal ["e", "ddd", "aa"], top_3_words("e e e e DDD ddd DdD: ddd ddd aa aA Aa, bb cc cC e e e")
     assert_equal ["won't", "wont"], top_3_words("  //wont won't won't ")
     assert_equal ["e"], top_3_words("  , e   .. ")
     assert_equal [], top_3_words("  ...  ")
