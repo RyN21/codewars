@@ -31,14 +31,38 @@ def top_3_words(text)
 end
 
 
-# BEST PRACTICE
+# BEST PRACTICE  &&  CLEVER
 #=======================================================================================
 
+def top_3_words(text)
+  text.scan(/[A-Za-z']+/)
+      .select { |x| /[A-Za-z]+/ =~ x }
+      .group_by { |x| x.downcase }
+      .sort_by { |k,v| -v.count }
+      .first(3)
+      .map(&:first)
+end
 
-# CLEVER
+
+# ALTERNATIVE
 #=======================================================================================
 
+def top_3_words(text)
+  text.downcase.scan(/\w+[\w']*/)
+               .inject(Hash.new(0)){|h,w|h[w]+=1;h}
+               .sort_by{|k,v|-v}
+               .take(3)
+               .map(&:first)
+end
 
+
+# ALTERNATIVE
+#=======================================================================================
+
+def top_3_words text
+  arr = text.downcase.scan(/\w(?:'|\w)*/)
+  arr.uniq.max_by(3){|w| arr.count w }
+end
 
 # PSUEDO CODE
 #=======================================================================================
