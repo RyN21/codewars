@@ -4,7 +4,7 @@ require 'pry'
 #=======================================================================================
 
 def permutations(s)
-  binding.pry
+  s.chars.permutation.map(&:join).uniq
 end
 
 # BEST PRACTICE
@@ -22,7 +22,10 @@ end
 # PSUEDO CODE
 #=======================================================================================
 
--The goal here is to take a string and come up with all the different
-possible combinations based on the letters provided in the string
--once all the possible combinations are found, place them in an array
--remove duplicates, if present
+# -The goal here is to take a string and come up with all the different
+# possible combinations based on the letters provided in the string
+# -once all the possible combinations are found, place them in an array
+# -remove duplicates, if present
+#
+# -take string
+# -convert string into an array with all the elements
