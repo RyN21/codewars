@@ -3,10 +3,16 @@ require 'pry'
 # MY SOLUTION
 #=======================================================================================
 
-
 def permutations(s)
-  s.chars.permutation.map(&:join).uniq
+  new = []
+  5000.times do
+    new << s.chars.shuffle.join
+  end
+  new.uniq
 end
+# def permutations(s)
+#   s.chars.permutation.map(&:join).uniq
+# end
 
 # BEST PRACTICE
 #=======================================================================================
