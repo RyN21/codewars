@@ -5,11 +5,11 @@ require_relative '../lib/format_duration'
 
 class FormatDurationTest < Minitest::Test
   def test_it
-    assert_equal "1 second"), format_duration(1)
-    assert_equal "1 minute and 2 seconds"), format_duration(62)
-    assert_equal "2 minutes"), format_duration(120)
-    assert_equal "1 hour"), format_duration(3600)
-    assert_equal "1 hour, 1 minute and 2 seconds"), format_duration(3662)
+    assert_equal "1 second", format_duration(1)
+    assert_equal "1 minute and 2 seconds", format_duration(62)
+    assert_equal "2 minutes", format_duration(120)
+    assert_equal "1 hour", format_duration(3600)
+    assert_equal "1 hour, 1 minute and 2 seconds", format_duration(3662)
   end
 end
 
@@ -45,6 +45,6 @@ end
 # A component will not appear at all if its value happens to be zero. Hence, 1 minute
 # and 0 seconds is not valid, but it should be just 1 minute.
 
-# A unit of time must be used "as much as possible". It means that the function should 
+# A unit of time must be used "as much as possible". It means that the function should
 # not return 61 seconds, but 1 minute and 1 second instead. Formally, the duration
 # specified by of a component must not be greater than any valid more significant unit of time.
