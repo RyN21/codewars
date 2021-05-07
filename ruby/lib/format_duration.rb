@@ -4,6 +4,9 @@ require 'pry'
 #=======================================================================================
 
 def format_duration(s)
+  mm, ss = s.divmod(60)
+  hh, mm = mm.divmod(60)
+  dd, hh = hh.divmod(24)
   binding.pry
 end
 # BEST PRACTICE
