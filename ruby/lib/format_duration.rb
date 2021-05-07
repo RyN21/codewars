@@ -7,6 +7,9 @@ def format_duration(s)
   mm, ss = s.divmod(60)
   hh, mm = mm.divmod(60)
   dd, hh = hh.divmod(24)
+  yy, dd = dd.divmod(365)
+
+  "#{yy} year, #{dd} day, #{hh} hour, #{mm} minute and #{ss} second"
   binding.pry
 end
 # BEST PRACTICE
@@ -42,6 +45,7 @@ end
 # other things to note
 # -must be a non-negative integer
 # -if 0 then return 'now'
+# -will need to pluraize second, minute, etc. if > 1
 #
 # def format_duration(s)
 #
