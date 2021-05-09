@@ -9,11 +9,13 @@ def format_duration(seconds)
   d, h = h.divmod(24)
   y, d = d.divmod(365)
 
-  time = [y, d, h, m, s]
+  time = {yy: y, dd: d, hh: h, mm: m, ss: s}
 
-  
-  # "#{yy} year, #{dd} day, #{hh} hour, #{mm} minute and #{ss} second"
+  until time.first[1] > 0
+    time.delete(time.first[0])
+  end
   binding.pry
+  # "#{yy} year, #{dd} day, #{hh} hour, #{mm} minute and #{ss} second"
 end
 # BEST PRACTICE
 #=======================================================================================
