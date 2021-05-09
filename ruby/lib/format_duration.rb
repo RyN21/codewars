@@ -11,11 +11,9 @@ def format_duration(seconds)
 
   time = {yy: y, dd: d, hh: h, mm: m, ss: s}
 
-  until time.first[1] > 0
-    time.delete(time.first[0])
-  end
+  time.delete_if { |k,v| v == 0 }
   binding.pry
-  # "#{yy} year, #{dd} day, #{hh} hour, #{mm} minute and #{ss} second"
+
 end
 # BEST PRACTICE
 #=======================================================================================
