@@ -3,13 +3,16 @@ require 'pry'
 # MY SOLUTION
 #=======================================================================================
 
-def format_duration(s)
-  mm, ss = s.divmod(60)
-  hh, mm = mm.divmod(60)
-  dd, hh = hh.divmod(24)
-  yy, dd = dd.divmod(365)
+def format_duration(seconds)
+  m, s = seconds.divmod(60)
+  h, m = m.divmod(60)
+  d, h = h.divmod(24)
+  y, d = d.divmod(365)
 
-  "#{yy} year, #{dd} day, #{hh} hour, #{mm} minute and #{ss} second"
+  time = [y, d, h, m, s]
+
+  
+  # "#{yy} year, #{dd} day, #{hh} hour, #{mm} minute and #{ss} second"
   binding.pry
 end
 # BEST PRACTICE
