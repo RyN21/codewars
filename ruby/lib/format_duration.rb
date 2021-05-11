@@ -9,7 +9,7 @@ def format_duration(seconds)
   d, h = h.divmod(24)
   y, d = d.divmod(365)
 
-  time = {year: y, day: d, hour: h, minute: m, second: s}
+  time = [[year, y], [day, d], [hour, h], [minute, m], [second, s]]
 
   time.delete_if { |k,v| v == 0 }
 
@@ -20,6 +20,8 @@ def format_duration(seconds)
     else
       key = k.to_s
     end
+
+    if time
     string.concat(v.to_s, 32, key)
     binding.pry
   end
