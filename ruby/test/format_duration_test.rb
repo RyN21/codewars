@@ -10,6 +10,7 @@ class FormatDurationTest < Minitest::Test
     assert_equal "2 minutes", format_duration(120)
     assert_equal "1 hour", format_duration(3600)
     assert_equal "1 hour, 1 minute and 2 seconds", format_duration(3662)
+    assert_equal "now", format_duration(0)
   end
 end
 
