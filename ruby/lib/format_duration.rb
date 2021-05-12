@@ -12,6 +12,7 @@ def format_duration(seconds)
   time = [['year', y], ['day', d], ['hour', h], ['minute', m], ['second', s]]
   time.delete_if { |k,v| v == 0 }
   string = ""
+  return 'now' if time == []
   stl = time.index([time.last[0], time.last[1]]) - 1 if time.count > 2
 
   time.each do |e|
@@ -30,7 +31,7 @@ def format_duration(seconds)
       string.concat(e[1].to_s, 32, e[0])
     end
   end
-  
+
   string
 end
 
