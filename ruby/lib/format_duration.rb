@@ -10,13 +10,12 @@ def format_duration(seconds)
   y, d = d.divmod(365)
 
   time = [['year', y], ['day', d], ['hour', h], ['minute', m], ['second', s]]
-
   time.delete_if { |k,v| v == 0 }
-
   string = ""
+  stl = time.index([time.last[0], time.last[1]]) - 1 if time.count > 2
+
   time.each do |e|
     e[0] = e[0] + 's' if e[1] > 1
-    stl = time.index([time.last[0], time.last[1]]) - 1 if time.count > 2
     if time.count == 1
       string.concat(e[1].to_s, 32, e[0])
     elsif time.count == 2 && e[0] == time[0][0]
@@ -31,6 +30,7 @@ def format_duration(seconds)
       string.concat(e[1].to_s, 32, e[0])
     end
   end
+  
   string
 end
 
