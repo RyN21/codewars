@@ -16,16 +16,25 @@ def format_duration(seconds)
   string = ""
   time.each do |e|
     e[0] = e[0] + 's' if e[1] > 1
+    stl = time.index([time.last[0], time.last[1]]) - 1 if time.count > 2
     if time.count == 1
       string.concat(e[1].to_s, 32, e[0])
     elsif time.count == 2 && e[0] == time[0][0]
       string.concat(e[1].to_s, 32, e[0], ' and ')
     elsif time.count == 2 && e[0] == time[1][0]
       string.concat(e[1].to_s, 32, e[0])
+    elsif time.count > 2 && e[0] != time.last[0] && e[0] != time[stl][0]
+      string.concat(e[1].to_s, 32, e[0] + ', ')
+    elsif time.count > 2 && e[0] == time[stl][0]
+      string.concat(e[1].to_s, 32, e[0] + ' and ')
+    elsif time.count > 2 && e[0] == time.last[0]
+      string.concat(e[1].to_s, 32, e[0])
     end
   end
   string
 end
+
+
 # BEST PRACTICE
 #=======================================================================================
 
