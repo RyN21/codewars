@@ -9,21 +9,20 @@ def format_duration(seconds)
   d, h = h.divmod(24)
   y, d = d.divmod(365)
 
-  time = [[year, y], [day, d], [hour, h], [minute, m], [second, s]]
+  time = [['year', y], ['day', d], ['hour', h], ['minute', m], ['second', s]]
 
   time.delete_if { |k,v| v == 0 }
 
   string = ""
-  time.each do |k,v|
-    if v > 1
-      key = k.to_s + 's'
-    else
-      key = k.to_s
+  time.each do |e|
+    e[0] = e[0] + 's' if e[1] > 1
+    if time.count == 1
+      string.concat(e[1].to_s, 32, e[0])
+    elsif time.count == 2 && e[0] == time[0][0]
+      string.concat(e[1].to_s, 32, e[0], ' and ')
+    elsif time.count == 2 && e[0] == time[1][0]
+      string.concat(e[1].to_s, 32, e[0])
     end
-
-    if time
-    string.concat(v.to_s, 32, key)
-    binding.pry
   end
   string
 end
