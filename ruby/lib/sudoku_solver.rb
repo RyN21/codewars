@@ -28,3 +28,5 @@ it will take in an puzzle argument that is an array that consists of 9 arrays wi
 This could be a pattern recognition / grid type of problem
 
 we will have to divide the arrays somehow to so that we can get 3x3 squares
+
+backtracking algorithm or recursion possibly
