@@ -1,7 +1,7 @@
 gem 'minitest', '~>5.2'
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative '../lib/format_duration'
+require_relative '../lib/4kyu/format_duration'
 
 class FormatDurationTest < Minitest::Test
   def test_it
