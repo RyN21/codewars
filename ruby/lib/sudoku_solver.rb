@@ -5,7 +5,7 @@ require 'matrix'
 #=======================================================================================
 
 def sudoku(puzzle)
-  m = Matrix[
+  board_matrix = Matrix[
     puzzle[0],
     puzzle[1],
     puzzle[2],
@@ -14,6 +14,42 @@ def sudoku(puzzle)
     puzzle[5],
     puzzle[7],
     puzzle[8],]
+  box1 = Matrix[
+    puzzle[0][0..2],
+    puzzle[1][0..2],
+    puzzle[2][0..2]]
+  box2 = Matrix[
+    puzzle[0][3..5],
+    puzzle[1][3..5],
+    puzzle[2][3..5]]
+  box3 = Matrix[
+    puzzle[0][6..8],
+    puzzle[1][6..8],
+    puzzle[2][6..8]]
+  box4 = Matrix[
+    puzzle[3][0..2],
+    puzzle[4][0..2],
+    puzzle[5][0..2]]
+  box5 = Matrix[
+    puzzle[3][3..5],
+    puzzle[4][3..5],
+    puzzle[5][3..5]]
+  box6 = Matrix[
+    puzzle[3][6..8],
+    puzzle[4][6..8],
+    puzzle[5][6..8]]
+  box7 = Matrix[
+    puzzle[6][0..2],
+    puzzle[7][0..2],
+    puzzle[8][0..2]]
+  box8 = Matrix[
+    puzzle[6][3..5],
+    puzzle[7][3..5],
+    puzzle[8][3..5]]
+  box9 = Matrix[
+    puzzle[6][6..8],
+    puzzle[7][6..8],
+    puzzle[8][6..8]]
   binding.pry
 end
 
