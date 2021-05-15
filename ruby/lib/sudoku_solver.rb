@@ -5,6 +5,15 @@ require 'matrix'
 #=======================================================================================
 
 def sudoku(puzzle)
+  m = Matrix[
+    puzzle[0],
+    puzzle[1],
+    puzzle[2],
+    puzzle[3],
+    puzzle[4],
+    puzzle[5],
+    puzzle[7],
+    puzzle[8],]
   binding.pry
 end
 
@@ -31,7 +40,7 @@ end
 # we will have to divide the arrays somehow to so that we can get 3x3 squares
 #
 # backtracking algorithm or recursion possibly
-
+#
 # -steps to take:
 # create a way to check rows columns and 3x3 squares
 # check possibilities of unknown spaces. if space has only one possibility, the space becomes that number
