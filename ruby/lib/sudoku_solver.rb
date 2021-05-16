@@ -33,39 +33,39 @@ def sudoku(puzzle)
   column7 = puzzle.collect { |s| s[6] }
   column8 = puzzle.collect { |s| s[7] }
   column9 = puzzle.collect { |s| s[8] }
-  box1 = Matrix[
+  box1 = [
     puzzle[0][0..2],
     puzzle[1][0..2],
     puzzle[2][0..2]]
-  box2 = Matrix[
+  box2 = [
     puzzle[0][3..5],
     puzzle[1][3..5],
     puzzle[2][3..5]]
-  box3 = Matrix[
+  box3 = [
     puzzle[0][6..8],
     puzzle[1][6..8],
     puzzle[2][6..8]]
-  box4 = Matrix[
+  box4 = [
     puzzle[3][0..2],
     puzzle[4][0..2],
     puzzle[5][0..2]]
-  box5 = Matrix[
+  box5 = [
     puzzle[3][3..5],
     puzzle[4][3..5],
     puzzle[5][3..5]]
-  box6 = Matrix[
+  box6 = [
     puzzle[3][6..8],
     puzzle[4][6..8],
     puzzle[5][6..8]]
-  box7 = Matrix[
+  box7 = [
     puzzle[6][0..2],
     puzzle[7][0..2],
     puzzle[8][0..2]]
-  box8 = Matrix[
+  box8 = [
     puzzle[6][3..5],
     puzzle[7][3..5],
     puzzle[8][3..5]]
-  box9 = Matrix[
+  box9 = [
     puzzle[6][6..8],
     puzzle[7][6..8],
     puzzle[8][6..8]]
