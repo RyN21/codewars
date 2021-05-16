@@ -5,15 +5,34 @@ require 'matrix'
 #=======================================================================================
 
 def sudoku(puzzle)
-  board_matrix = Matrix[
+  b = Matrix[
     puzzle[0],
     puzzle[1],
     puzzle[2],
     puzzle[3],
     puzzle[4],
     puzzle[5],
+    puzzle[6],
     puzzle[7],
     puzzle[8],]
+  row1 = puzzle[0]
+  row2 = puzzle[1]
+  row3 = puzzle[2]
+  row4 = puzzle[3]
+  row5 = puzzle[4]
+  row6 = puzzle[5]
+  row7 = puzzle[6]
+  row8 = puzzle[7]
+  row9 = puzzle[8]
+  column1 = puzzle.collect { |s| s[0] }
+  column2 = puzzle.collect { |s| s[1] }
+  column3 = puzzle.collect { |s| s[2] }
+  column4 = puzzle.collect { |s| s[3] }
+  column5 = puzzle.collect { |s| s[4] }
+  column6 = puzzle.collect { |s| s[5] }
+  column7 = puzzle.collect { |s| s[6] }
+  column8 = puzzle.collect { |s| s[7] }
+  column9 = puzzle.collect { |s| s[8] }
   box1 = Matrix[
     puzzle[0][0..2],
     puzzle[1][0..2],
