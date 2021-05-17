@@ -69,7 +69,10 @@ def sudoku(puzzle)
     puzzle[6][6..8],
     puzzle[7][6..8],
     puzzle[8][6..8]]
-  binding.pry
+  puzzle.each do |r|
+
+    binding.pry
+  end
 end
 
 # BEST PRACTICE
@@ -127,3 +130,7 @@ end
 #     array
 #   end
 # end
+
+so we can go through each row. If an element is == to 0
+then we want to create an array of all the possibilities the square can be
+it will check the entire row and then check the comlums (or the same index in the other rows)
