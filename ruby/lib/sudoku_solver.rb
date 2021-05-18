@@ -183,28 +183,44 @@ class Board
   end
 
   def add_possibilities()
+    check_row
+    check_column
+  end
+
+  def check_row
+    poss = [1,2,3,4,5,6,7,8,9]
     squares.each do |s|
       if s[1].number == 0
         lc = s[0].split("")[0]
-        all = squares.find_all do |k,v|
+        all = squares.find_all do |k,_|
           k.include?(lc)
         end
-        poss = [1,2,3,4,5,6,7,8,9]
         all.each do |a|
           poss.delete(a[1].number) if a[1].number != 0
         end
         poss.each do |p|
           s[1].possibilities << p
         end
-        binding.pry
       end
     end
   end
 
-  def check_row
-  end
-
   def check_column
+    poss = [1,2,3,4,5,6,7,8,9]
+    squares.each do |s|
+      if s[1].number == 0
+        ic = s[0].split("")[1]
+        all = squares.find_all do |k,_|
+          k.include?(ic)
+        end
+        all.each do |a|
+          poss.delete(a[1].number) if a[1].number != 0
+        end
+        poss.each do |p|
+          binding.pry
+        end
+      end
+    end
   end
 
   def check_box
