@@ -71,8 +71,12 @@ def sudoku(puzzle)
     puzzle[8][6..8]]
   puzzle.each do |r|
 
-    binding.pry
   end
+end
+
+def sudoku(puzzle)
+
+  binding.pry
 end
 
 # BEST PRACTICE
@@ -134,3 +138,31 @@ end
 so we can go through each row. If an element is == to 0
 then we want to create an array of all the possibilities the square can be
 it will check the entire row and then check the comlums (or the same index in the other rows)
+
+
+Lets try to create a grid so that each square has is labeled
+create two classes
+  - board
+  - square
+
+
+class Square
+  attr_reader :coordniate,
+              :number,
+              :possibilities
+
+  def initialize(coordniate, number = 0)
+    @coordniate = coordniate
+    @number = number
+    @possibilities = []
+  end
+
+  def empty?
+    @number == 0
+  end
+
+  
+end
+
+class Board
+end
