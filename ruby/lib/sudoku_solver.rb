@@ -185,6 +185,7 @@ class Board
   def add_possibilities()
     check_row
     check_column
+    binding.pry
     filter_possibilities
   end
 
