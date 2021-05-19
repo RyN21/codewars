@@ -219,9 +219,18 @@ class Board
         end
         possibilities.each do |p|
           s[1].possibilities << p
-          # [1,2,4,6,9]
         end
-        binding.pry
+      end
+    end
+  end
+
+  def filter_possibilities
+    squares.each do |s|
+      if s[1].number == 0
+        s[1].possibilities.delete_if do |e|
+          s[1].possibilities.count(e) == 1
+        end
+        s[1].possibilities.uniq!
       end
     end
   end
