@@ -185,10 +185,11 @@ class Board
   def add_possibilities()
     check_row
     check_column
+    filter_possibilities
   end
 
   def check_row
-    poss = [1,2,3,4,5,6,7,8,9]
+    possibilities = [1,2,3,4,5,6,7,8,9]
     squares.each do |s|
       if s[1].number == 0
         lc = s[0].split("")[0]
@@ -196,9 +197,9 @@ class Board
           k.include?(lc)
         end
         all.each do |a|
-          poss.delete(a[1].number) if a[1].number != 0
+          possibilities.delete(a[1].number) if a[1].number != 0
         end
-        poss.each do |p|
+        possibilities.each do |p|
           s[1].possibilities << p
         end
       end
@@ -206,7 +207,7 @@ class Board
   end
 
   def check_column
-    poss = [1,2,3,4,5,6,7,8,9]
+    possibilities = [1,2,3,4,5,6,7,8,9]
     squares.each do |s|
       if s[1].number == 0
         ic = s[0].split("")[1]
@@ -214,11 +215,13 @@ class Board
           k.include?(ic)
         end
         all.each do |a|
-          poss.delete(a[1].number) if a[1].number != 0
+          possibilities.delete(a[1].number) if a[1].number != 0
         end
-        poss.each do |p|
-          binding.pry
+        possibilities.each do |p|
+          s[1].possibilities << p
+          # [1,2,4,6,9]
         end
+        binding.pry
       end
     end
   end
