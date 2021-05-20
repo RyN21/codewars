@@ -8,8 +8,8 @@ require_relative '../lib/sudoku_solver'
 class SudokuSolverTest < Minitest::Test
   def test_it
     puzzle = [
-      # [5,3,0,0,7,0,0,0,0],
-      # [6,0,0,1,9,5,0,0,0],
+      [5,3,0,0,7,0,0,0,0],
+      [6,0,0,1,9,5,0,0,0],
       [0,9,8,0,0,0,0,6,0],
       [8,0,0,0,6,0,0,0,3],
       [4,0,0,8,0,3,0,0,1],
