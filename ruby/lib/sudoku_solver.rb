@@ -185,7 +185,6 @@ class Board
   def add_possibilities()
     check_row
     check_column
-    binding.pry
     filter_possibilities
   end
 
@@ -198,6 +197,7 @@ class Board
           k.include?(lc)
         end
         all.each do |a|
+          binding.pry
           possibilities.delete(a[1].number) if a[1].number != 0
         end
         possibilities.each do |p|
