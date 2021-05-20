@@ -186,11 +186,13 @@ class Board
     check_column
     check_row
     filter_possibilities
-    binding.pry
   end
 
-  def fill_in_square
-    
+  def fill_in_square()
+    squares.each do |s|
+      binding.pry
+      s[1].number = s[1].possibilities[0] if s[1].possibilities.count == 1
+    end
   end
 
   def check_row
@@ -252,4 +254,6 @@ end
 def sudoku(puzzle)
   board = Board.new(puzzle)
   board.add_possibilities
+  board.fill_in_square
+  binding.pry
 end
