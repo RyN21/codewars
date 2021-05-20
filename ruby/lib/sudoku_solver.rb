@@ -148,12 +148,14 @@ require 'pry'
 class Square
   attr_reader :coordniate,
   :number,
-  :possibilities
+  :row_possibilities,
+  :col_possibilities
 
   def initialize(coordniate, number = 0)
     @coordniate = coordniate
     @number = number
-    @possibilities = []
+    @row_possibilities = []
+    @col_possibilities = []
   end
 
   def empty?
@@ -183,9 +185,8 @@ class Board
   end
 
   def add_possibilities()
-    check_row
     check_column
-    binding.pry
+    check_row
     filter_possibilities
   end
 
@@ -201,7 +202,7 @@ class Board
           possibilities.delete(a[1].number) if a[1].number != 0
         end
         possibilities.each do |p|
-          s[1].possibilities << p
+          s[1].row_possibilities << p
         end
       end
       possibilities = [1,2,3,4,5,6,7,8,9]
@@ -220,7 +221,7 @@ class Board
           possibilities.delete(a[1].number) if a[1].number != 0
         end
         possibilities.each do |p|
-          s[1].possibilities << p
+          s[1].col_possibilities << p
         end
       end
       possibilities = [1,2,3,4,5,6,7,8,9]
@@ -230,10 +231,11 @@ class Board
   def filter_possibilities
     squares.each do |s|
       if s[1].number == 0
-        s[1].possibilities.delete_if do |e|
-          s[1].possibilities.count(e) == 1
-        end
-        s[1].possibilities.uniq!
+        binding.pry
+        # s[1].possibilities.delete_if do |e|
+        #   s[1].possibilities.count(e) == 2
+        # end
+        # s[1].possibilities.uniq!
       end
     end
   end
