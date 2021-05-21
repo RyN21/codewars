@@ -159,6 +159,10 @@ class Square
   def empty?
     @number == 0
   end
+
+  def update_number(num)
+    @number = num
+  end
 end
 
 
@@ -190,8 +194,9 @@ class Board
 
   def fill_in_square()
     squares.each do |s|
-      binding.pry
-      s[1].number = s[1].possibilities[0] if s[1].possibilities.count == 1
+      if s[1].possibilities.count == 1
+        s[1].update_number(s[1].possibilities.pop)
+      end
     end
   end
 
