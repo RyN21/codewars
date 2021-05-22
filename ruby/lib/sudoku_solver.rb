@@ -22,6 +22,10 @@ class Square
   def update_number(num)
     @number = num
   end
+
+  def reset_possibilities
+    @possibilities = []
+  end
 end
 
 
@@ -110,6 +114,12 @@ class Board
 
   def check_box
   end
+
+  def solved?
+    squares.values.any? do |sv|
+      !sv.number == 0
+    end
+  end
 end
 
 
@@ -117,9 +127,13 @@ end
 # Sudoku =======================================================================
 def sudoku(puzzle)
   board = Board.new(puzzle)
-  board.add_possibilities
-  board.fill_in_square
+  until solved? do
+    board.add_possibilities
+    board.fill_in_square
+    board.squares.each { |s| s[1].reset_possibilities }
+  end
   binding.pry
+  board
 end
 
 
