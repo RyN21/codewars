@@ -115,6 +115,12 @@ class Board
   def check_box
   end
 
+  def reset_all()
+    squares.map do |s|
+      s[1].reset_possibilities
+    end
+  end
+
   def solved?
     squares.values.any? do |sv|
       !sv.number == 0
@@ -127,12 +133,12 @@ end
 # Sudoku =======================================================================
 def sudoku(puzzle)
   board = Board.new(puzzle)
-  until solved? do
+  until board.solved? do
     board.add_possibilities
     board.fill_in_square
-    board.squares.each { |s| s[1].reset_possibilities }
+    board.reset_all
+    # board.squares.each { |s| s[1].reset_possibilities }
   end
-  binding.pry
   board
 end
 
