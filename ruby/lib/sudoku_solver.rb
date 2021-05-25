@@ -52,6 +52,7 @@ class Board
   def add_possibilities()
     check_column
     check_row
+    check_box
     filter_possibilities
   end
 
@@ -112,7 +113,63 @@ class Board
     end
   end
 
-  def check_box
+  def check_box()
+    box1 = [squares["A1"],
+            squares["A2"],
+            squares["A3"],
+            squares["B3"],
+            squares["B3"],
+            squares["B3"],
+            squares["C3"],
+            squares["C3"],
+            squares["C3"]]
+    box1 = [squares["A1"],
+            squares["A2"],
+            squares["A3"],
+            squares["B3"],
+            squares["B3"],
+            squares["B3"],
+            squares["C3"],
+            squares["C3"],
+            squares["C3"]]
+    box1 = [squares["A4"],
+            squares["A5"],
+            squares["A6"],
+            squares["B3"],
+            squares["B3"],
+            squares["B3"],
+            squares["C3"],
+            squares["C3"],
+            squares["C3"]]
+    box1 = [squares["A1"],
+            squares["A2"],
+            squares["A3"],
+            squares["B3"],
+            squares["B3"],
+            squares["B3"],
+            squares["C3"],
+            squares["C3"],
+            squares["C3"]]
+    box1 = [squares["A1"],
+            squares["A2"],
+            squares["A3"],
+            squares["B3"],
+            squares["B3"],
+            squares["B3"],
+            squares["C3"],
+            squares["C3"],
+            squares["C3"]]
+    box1 = [squares["A1"],
+            squares["A2"],
+            squares["A3"],
+            squares["B3"],
+            squares["B3"],
+            squares["B3"],
+            squares["C3"],
+            squares["C3"],
+            squares["C3"]]
+
+    binding.pry
   end
 
   def reset_all()
