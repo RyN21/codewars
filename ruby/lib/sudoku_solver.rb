@@ -196,7 +196,7 @@ class Board
             squares["I8"],
             squares["I9"]]
 
-
+    boxes = [box1,box2,box3,box4,box5,box6,box7,box8,box9]
     binding.pry
   end
 
