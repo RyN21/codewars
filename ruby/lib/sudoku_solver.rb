@@ -52,6 +52,7 @@ class Board
   def add_possibilities()
     check_column
     check_row
+    filter_possibilities
     check_box
     filter_possibilities
   end
@@ -197,7 +198,29 @@ class Board
             squares["I9"]]
 
     boxes = [box1,box2,box3,box4,box5,box6,box7,box8,box9]
-    binding.pry
+    boxes.each do |b|
+      possibilities = [1,2,3,4,5,6,7,8,9]
+      b.each do |s|
+        binding.pry
+      end
+    end
+
+    possibilities = [1,2,3,4,5,6,7,8,9]
+    squares.each do |s|
+      if s[1].number == 0
+        lc = s[0].split("")[0]
+        all = squares.find_all do |k,_|
+          k.include?(lc)
+        end
+        all.each do |a|
+          possibilities.delete(a[1].number) if a[1].number != 0
+        end
+        possibilities.each do |p|
+          s[1].possibilities << p
+        end
+      end
+      possibilities = [1,2,3,4,5,6,7,8,9]
+    end
   end
 
   def reset_all()
