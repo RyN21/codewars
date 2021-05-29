@@ -200,8 +200,8 @@ class Board
     boxes = [box1,box2,box3,box4,box5,box6,box7,box8,box9]
     boxes.each do |b|
       possibilities = [1,2,3,4,5,6,7,8,9]
-      b.each do |s|
-        binding.pry
+      b.find_all do |s|
+        s[1].number if s[1].number != 0
       end
     end
 
