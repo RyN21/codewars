@@ -51,6 +51,7 @@ class Board
 
   def add_possibilities()
     check_column
+    binding.pry
     check_row
     filter_possibilities
     check_box
@@ -107,7 +108,7 @@ class Board
     squares.each do |s|
       if s[1].number == 0
         s[1].possibilities.delete_if do |e|
-          s[1].possibilities.count(e) == 1
+          s[1].possibilities.count(e) == 1 && s[1].possibilities.count > 1
         end
         s[1].possibilities.uniq!
       end
@@ -145,11 +146,11 @@ class Board
     box4 = [squares["D1"],
             squares["D2"],
             squares["D3"],
+            squares["E1"],
+            squares["E2"],
             squares["E3"],
-            squares["E3"],
-            squares["E3"],
-            squares["F3"],
-            squares["F3"],
+            squares["F1"],
+            squares["F2"],
             squares["F3"]]
     box5 = [squares["D4"],
             squares["D5"],
@@ -172,11 +173,11 @@ class Board
     box7 = [squares["G1"],
             squares["G2"],
             squares["G3"],
+            squares["H1"],
+            squares["H2"],
             squares["H3"],
-            squares["H3"],
-            squares["H3"],
-            squares["I3"],
-            squares["I3"],
+            squares["I1"],
+            squares["I2"],
             squares["I3"]]
     box8 = [squares["G4"],
             squares["G5"],
@@ -233,6 +234,7 @@ def sudoku(puzzle)
   board = Board.new(puzzle)
   until board.solved? do
     board.add_possibilities
+    # binding.pry
     board.fill_in_square
     board.reset_all
     # board.squares.each { |s| s[1].reset_possibilities }
