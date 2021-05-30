@@ -211,23 +211,6 @@ class Board
         end
       end
     end
-
-    possibilities = [1,2,3,4,5,6,7,8,9]
-    squares.each do |s|
-      if s[1].number == 0
-        lc = s[0].split("")[0]
-        all = squares.find_all do |k,_|
-          k.include?(lc)
-        end
-        all.each do |a|
-          possibilities.delete(a[1].number) if a[1].number != 0
-        end
-        possibilities.each do |p|
-          s[1].possibilities << p
-        end
-      end
-      possibilities = [1,2,3,4,5,6,7,8,9]
-    end
   end
 
   def reset_all()
