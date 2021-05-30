@@ -118,11 +118,11 @@ class Board
     box1 = [squares["A1"],
             squares["A2"],
             squares["A3"],
+            squares["B1"],
+            squares["B2"],
             squares["B3"],
-            squares["B3"],
-            squares["B3"],
-            squares["C3"],
-            squares["C3"],
+            squares["C1"],
+            squares["C2"],
             squares["C3"]]
     box2 = [squares["A4"],
             squares["A5"],
@@ -200,8 +200,15 @@ class Board
     boxes = [box1,box2,box3,box4,box5,box6,box7,box8,box9]
     boxes.each do |b|
       possibilities = [1,2,3,4,5,6,7,8,9]
-      b.find_all do |s|
-        s[1].number if s[1].number != 0
+      b.each do |s|
+        possibilities.delete(s.number) if s.number != 0
+      end
+      b.each do |s|
+        if s.number == 0
+          possibilities.each do |p|
+            s.possibilities << p
+          end
+        end
       end
     end
 
