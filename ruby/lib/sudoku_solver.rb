@@ -226,6 +226,10 @@ class Board
     end
     unsolved.count == 0 ? true : false
   end
+
+  def convert_board()
+    
+  end
 end
 
 
