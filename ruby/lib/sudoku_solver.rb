@@ -51,7 +51,6 @@ class Board
 
   def add_possibilities()
     check_column
-    binding.pry
     check_row
     filter_possibilities
     check_box
@@ -221,24 +220,26 @@ class Board
   end
 
   def solved?
-    squares.values.any? do |sv|
-      !sv.number == 0
+    unsolved = []
+    squares.each do |sv|
+      unsolved << sv[1].number if sv[1].number == 0
     end
+    unsolved.count == 0 ? true : false
   end
 end
-
 
 
 # Sudoku =======================================================================
 def sudoku(puzzle)
   board = Board.new(puzzle)
+  # while !board.solved? do
   until board.solved? do
     board.add_possibilities
-    # binding.pry
     board.fill_in_square
     board.reset_all
     # board.squares.each { |s| s[1].reset_possibilities }
   end
+  binding.pry
   board
 end
 
