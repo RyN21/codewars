@@ -379,6 +379,56 @@ def sudoku(puzzle)
 end
 
 
+# ALTERNATIVE
+#=======================================================================================
+
+$result = []
+
+def possible(y,x,n,grid)
+  (0...9).each do |i|
+    return false if grid[y][i] === n
+  end
+
+  (0...9).each do |i|
+    return false if grid[i][x] === n
+  end
+
+  x0 = x - x % 3
+  y0 = y - y % 3
+
+  (0...3).each do |i|
+    (0...3).each do |j|
+      return false if grid[y0 + i][x0 + j] === n
+    end
+  end
+
+  return true
+end
+
+def calculate(grid)
+  (0...9).each do |y|
+    (0...9).each do |x|
+      if grid[y][x] === 0 then
+        (1..9).each do |n|
+          if possible(y, x, n, grid) then
+            grid[y][x] = n
+            calculate(grid)
+            grid[y][x] = 0
+          end
+        end
+        return
+      end
+    end
+  end
+  $result = grid.map(&:dup)
+end
+
+def sudoku(puzzle)
+  calculate(puzzle)
+  return $result
+end
+
+
 # PSUEDO CODE
 #=======================================================================================
 
