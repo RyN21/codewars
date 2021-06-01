@@ -228,7 +228,19 @@ class Board
   end
 
   def convert_board()
-    
+    solution = []
+    nums = squares.map do |s|
+      s[1].number
+    end
+    9.times do
+      array = []
+      9.times do
+        array << nums.shift
+      end
+      solution << array
+      array = []
+    end
+    solution
   end
 end
 
@@ -243,8 +255,7 @@ def sudoku(puzzle)
     board.reset_all
     # board.squares.each { |s| s[1].reset_possibilities }
   end
-  binding.pry
-  board
+  board.convert_board
 end
 
 
