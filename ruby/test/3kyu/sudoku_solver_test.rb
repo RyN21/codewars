@@ -1,7 +1,7 @@
 gem 'minitest', '~>5.2'
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative '../lib/sudoku_solver'
+require_relative '../lib/3kyu/sudoku_solver'
 
 
 
