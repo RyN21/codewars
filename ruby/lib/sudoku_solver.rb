@@ -49,6 +49,15 @@ class Board
     end
   end
 
+  def execute()
+    until solved? do
+      add_possibilities
+      fill_in_square
+      reset_all
+    end
+    convert_board
+  end
+
   def add_possibilities()
     check_column
     check_row
@@ -248,32 +257,131 @@ end
 # Sudoku =======================================================================
 def sudoku(puzzle)
   board = Board.new(puzzle)
-  # while !board.solved? do
-  until board.solved? do
-    board.add_possibilities
-    board.fill_in_square
-    board.reset_all
-    # board.squares.each { |s| s[1].reset_possibilities }
-  end
-  board.convert_board
+  board.execute
 end
 
 
-# # BEST PRACTICE
-# #=======================================================================================
-#
-#
-# # CLEVER
-# #=======================================================================================
-#
-#
-# # ALTERNATIVE
-# #=======================================================================================
-#
-#
-# # PSUEDO CODE
-# #=======================================================================================
-#
+# BEST PRACTICE  &&  CLEVER
+#=======================================================================================
+
+def get_square(x, y, a)
+  k = (y/3)*3
+  m = (x/3)*3
+  a[k..(k+2)].transpose[m..(m+2)].flatten(1)
+end
+
+def sudoku(p)
+  i = 0
+  while p.flatten(1) != p.flatten(2) || p.flatten.include?(0)
+    p.each_with_index do |r, y|
+      r.each_with_index do |d, x|
+        if d == 0 || d.class == Array
+          n = (1..9).to_a - r - p.transpose[x] - get_square(x, y, p.dup)
+          p[y][x] = n.size == 1 ? n[0] : n
+        end
+      end
+    end
+  end
+  p
+end
+
+
+# ALTERNATIVE
+#=======================================================================================
+
+def sudoku(puzzle)
+
+    def filterGridSets(ans, grid, i, j, v)
+        ans << [i,j,v]
+        a,b = 3*(i/3).floor, 3*(j/3).floor
+        for z in (0...9) do
+            for x,y in [[i,z], [z,j], [a+z/3, b+z%3]] do
+                grid[x][y].delete(v)
+            end
+        end
+    end
+
+    ans  = []
+    grid = (0...9).map{|x| (0...9).map{|y| puzzle[x][y]!=0 ? [puzzle[x][y]].to_set : [1,2,3,4,5,6,7,8,9].to_set }}
+
+    while ans.size != 81 do
+        for x in (0...9) do
+            for y in (0...9) do
+                if grid[x][y].size == 1
+                    v = grid[x][y].to_a[0]
+                    grid[x][y].clear
+                    filterGridSets(ans, grid, x, y, v)
+                end
+            end
+        end
+    end
+
+    out = (0...9).map{|x| [0]*9 }
+    ans.each{|x,y,v| out[x][y] = v }
+    return out
+end
+
+
+# ALTERNATIVE
+#=======================================================================================
+
+require 'set'
+Indices = 9.times
+
+def neighbours(i, j)
+  a = Indices.map do |x| [i, x] end
+  b = Indices.map do |x| [x, j] end
+  q = i / 3
+  p = j / 3
+  c = 3.times.map do |k|
+      3.times.map do |l|
+        [k + 3 * q, l + 3 * p]
+      end
+    end
+    .flatten(1)
+  a.concat(b).concat(c)
+end
+
+def sudoku(puzzle)
+  possibilities = puzzle.map do |row|
+    row.map do |cell|
+      Set[1,2,3,4,5,6,7,8,9]
+    end
+  end
+  queue = []
+  Indices.map do |i|
+    Indices.map do |j|
+      next if puzzle[i][j] == 0
+      queue.push [i,j]
+      possibilities[i][j] = Set[]
+    end
+  end
+  until queue.empty?
+    cell = queue.pop
+    i, j = cell[0], cell[1]
+
+    neighbours(i, j).each do |neighbour|
+      i_n, j_n = neighbour[0], neighbour[1]
+      values_for_neighbour = possibilities[i_n][j_n]
+
+      next unless values_for_neighbour.include? puzzle[i][j]
+
+      values_for_neighbour.delete(puzzle[i][j])
+      next unless values_for_neighbour.size == 1
+
+      puzzle[i_n][j_n] = values_for_neighbour.to_a.first
+      values_for_neighbour.clear
+      queue.push [i_n, j_n]
+    end
+  end
+
+  puzzle
+end
+
+
+# PSUEDO CODE
+#=======================================================================================
+
 # # This method will be to solve a 9x9 sudoku puzzle
 # # it will take in an puzzle argument that is an array that consists of 9 arrays with 9 elements
 # # 0's represents unknown squares
