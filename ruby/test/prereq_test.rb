@@ -6,10 +6,10 @@ require_relative '../lib/prereq'
 class PrereqTest < Minitest::Test
   def test_it
     prereq_1 = [
-      ["class_1", "class_2"],
       ["class_4", "class_5"],
       ["class_2", "class_3"],
       ["class_5", "class_6"],
+      ["class_1", "class_2"],
       ["class_3", "class_4"]
     ]
 
