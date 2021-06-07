@@ -42,20 +42,73 @@ def snail(array)
 end
 
 
-# CLEVER
+# BEST PRACTICE  &&  clever
 #=======================================================================================
+
+def snail(array)
+  array.empty? ? [] : array.shift + snail(array.transpose.reverse)
+end
 
 
 # ALTERNATIVE
 #=======================================================================================
 
+result = []
+while array.flatten.any?
+  result << array.shift
+  array = array.transpose.reverse
+end
+result.flatten
+end
+
 
 # ALTERNATIVE
 #=======================================================================================
 
+def snail(array)
+  array.empty? ? [] : array[0] + snail(array[1..-1].transpose.reverse)
+end
+
 
 # ALTERNATIVE
 #=======================================================================================
+
+def snail(matriz)
+  result = []
+  step = 0
+  while matriz.size > 0
+    step = 0 if step > 3
+    case step
+      when 0
+        result += matriz.shift
+      when 1
+        result += matriz.map{ |x| x.pop }
+      when 2
+        result += matriz.pop.reverse
+      when 3
+        result += matriz.map{ |x| x.shift }.reverse
+    end
+    step += 1
+  end
+  result
+end
+
+
+# ALTERNATIV
+#=======================================================================================
+
+def snail(array)
+  snail = []
+  loop do
+    snail << array.shift
+    return snail.flatten if array.empty?
+    array[0...-1].each {|arr| snail << arr.pop}
+    snail << array.pop.reverse
+
+    return snail.flatten if array.empty?
+    array[1..-1].reverse_each {|arr| snail << arr.shift}
+  end
+end
 
 
 # PSUEDO CODE
