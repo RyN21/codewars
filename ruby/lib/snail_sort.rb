@@ -6,17 +6,19 @@ require 'pry'
 def snail(array)
   snail_a = []
   until array.empty? do
+    # takes the first row and stores each element into the new snail array then deletes first row
     array[0].each do |e|
       snail_a << e
     end
     array.delete_at(0)
+
+    # takes the last element of the remaining arrays
     array.each do |a|
-      a.each do |e|
-        binding.pry
-        snail_a << e if e is last
-        # delete e from array
-      end
+      index = a.count - 1
+      snail_a << a[index]
+      a.delete_at(index)
     end
+    binding.pry
     array.last do |e|
       # reverse
       snail_a << e
