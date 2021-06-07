@@ -53,6 +53,34 @@ Brute force could work still:
     - then the first element in every array, but starting with the last array
     - then repeat the steps until all the arrays are empty
 
+    psuedo code:
+
+      def snail(array)
+        snail_a = []
+        until array.empty? do
+          array[0].each |e| do
+            snail_a << e
+            delete e from array
+          end
+          array.each do |a|
+            a.each do |e|
+              snail_a << e if e is last
+              delete e from array
+            end
+          end
+          array.last do |e|
+            reverse
+            snail_a << e
+            delete e from array
+          end
+          array.each do |a|
+            reverse
+            snail_a << e if e is first
+            delete e from array
+          end
+        end
+      end
+
 But another interesting way we coult approach this is if we could lable each grid with a number
   - starting with 1 and incramenting by 1 based on the direction of the spiral
   - we could then just assign each element to the number with a hash
@@ -60,4 +88,4 @@ But another interesting way we coult approach this is if we could lable each gri
   - then return the values in an array based on the order
 
   - the tricky part will be assigning each square a number in the order it should be in despite the size of the grid
-  - 
+  -
