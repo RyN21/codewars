@@ -18,18 +18,27 @@ def snail(array)
       snail_a << a[index]
       a.delete_at(index)
     end
-    binding.pry
-    array.last do |e|
-      # reverse
-      snail_a << e
-      # delete e from array
+
+    # takes the last array and shovels each element into snail array in reverse
+    if array.last != nil
+      until array.last.empty? do
+        snail_a << array.last.pop
+      end
+      array.delete(array.last)
     end
+
+    # takes the first element of each remaining rows and then shoves them into snail array in reverse
+    e_0 = []
     array.each do |a|
-      # reverse
-      snail_a << e if e is first
-      # delete e from array
+      e_0 << a.shift
+    end
+    if array.last != nil
+      until e_0.empty?do
+        snail_a << e_0.pop
+      end
     end
   end
+  snail_a
 end
 
 
