@@ -8,10 +8,11 @@ def snail(array)
   until array.empty? do
     array[0].each do |e|
       snail_a << e
-      # delete e from array
     end
+    array.delete_at(0)
     array.each do |a|
       a.each do |e|
+        binding.pry
         snail_a << e if e is last
         # delete e from array
       end
