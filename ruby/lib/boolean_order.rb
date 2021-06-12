@@ -77,14 +77,22 @@ As for some psuedo code:
 
 def solve(s, ops)
   combine s and ops into one string, possible array
-  start by shoveling first s into new string
-  then first ops into the next string.
-  as these are shoveled into the new string / array
-    - we delete them so we can shovel the next one in an easy fashion
+    -start by shoveling first s into new string
+    -then first ops into the next string.
+    -as these are shoveled into the new string / array
+      - we delete them so we can shovel the next one in an easy fashion
 
   next step is going to be creating arrangements
+    -
+    -
 
   next would be solving for the end boolean
+    - 
+    -
 
   finally, we will count all the equations that resulted as TRUE
+    - we can group all the equations / arrangements into an array
+    - then map over each arrangement to show the boolean resulte
+    - then once its mapped of, we can simply take the count of how many arrangements resulted in 'true'
+
 end
