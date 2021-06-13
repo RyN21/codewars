@@ -72,6 +72,9 @@ end
 # - there can be so many possible Arrangements
 # - the answer for this is 16.
 # - So there are AT LEAST 16 possible arrangements.
+- for creating the different arrangements
+  - I am thinking we could maybe just use the index
+    - solve two at a time in different orders
 
 # As for some psuedo code:
 #
@@ -84,7 +87,7 @@ def solve(s, ops)
 
   next step is going to be creating arrangements
     - I am thinking that whatever way I can cycle or loop to get these arrangements, I can simply store if its true
-    - 
+    -
 
   next would be solving for the end boolean
     - This should be fairly straight forward, as it should solve for itself
