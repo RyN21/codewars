@@ -4,7 +4,7 @@ require 'pry'
 #=======================================================================================
 
 def solve(s, ops)
-
+  binding.pry
 end
 
 # BEST PRACTICE
@@ -73,8 +73,8 @@ end
 # - the answer for this is 16.
 # - So there are AT LEAST 16 possible arrangements.
 
-As for some psuedo code:
-
+# As for some psuedo code:
+#
 def solve(s, ops)
   combine s and ops into one string, possible array
     -start by shoveling first s into new string
@@ -83,11 +83,11 @@ def solve(s, ops)
       - we delete them so we can shovel the next one in an easy fashion
 
   next step is going to be creating arrangements
-    -
-    -
+    - I am thinking that whatever way I can cycle or loop to get these arrangements, I can simply store if its true
+    - 
 
   next would be solving for the end boolean
-    - 
+    - This should be fairly straight forward, as it should solve for itself
     -
 
   finally, we will count all the equations that resulted as TRUE
