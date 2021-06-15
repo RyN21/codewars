@@ -4,7 +4,16 @@ require 'pry'
 #=======================================================================================
 
 def solve(s, ops)
-  binding.pry
+  until s.size == 0
+    s.split('')
+    binding.pry
+  end
+
+
+  # -start by shoveling first s into new string and convert to 'boolean'
+  # -then first ops into the next string.
+  # -as these are shoveled into the new string / array
+  # - we delete them so we can shovel the next one in an easy fashion
 end
 
 # BEST PRACTICE
@@ -72,30 +81,30 @@ end
 # - there can be so many possible Arrangements
 # - the answer for this is 16.
 # - So there are AT LEAST 16 possible arrangements.
-- for creating the different arrangements
-  - I am thinking we could maybe just use the index
-    - solve two at a time in different orders
+# - for creating the different arrangements
+#   - I am thinking we could maybe just use the index
+#     - solve two at a time in different orders
 
 # As for some psuedo code:
 #
-def solve(s, ops)
-  combine s and ops into one string, possible array
-    -start by shoveling first s into new string
-    -then first ops into the next string.
-    -as these are shoveled into the new string / array
-      - we delete them so we can shovel the next one in an easy fashion
-
-  next step is going to be creating arrangements
-    - I am thinking that whatever way I can cycle or loop to get these arrangements, I can simply store if its true
-    -
-
-  next would be solving for the end boolean
-    - This should be fairly straight forward, as it should solve for itself
-    -
-
-  finally, we will count all the equations that resulted as TRUE
-    - we can group all the equations / arrangements into an array
-    - then map over each arrangement to show the boolean resulte
-    - then once its mapped of, we can simply take the count of how many arrangements resulted in 'true'
-
-end
+# def solve(s, ops)
+#   combine s and ops into one string, possible array
+#     -start by shoveling first s into new string and convert boolean letter to word
+#     -then first ops into the next string.
+#     -as these are shoveled into the new string / array
+#       - we delete them so we can shovel the next one in an easy fashion
+#
+#   next step is going to be creating arrangements
+#     - I am thinking that whatever way I can cycle or loop to get these arrangements, I can simply store if its true
+#     -
+#
+#   next would be solving for the end boolean
+#     - This should be fairly straight forward, as it should solve for itself
+#     -
+#
+#   finally, we will count all the equations that resulted as TRUE
+#     - we can group all the equations / arrangements into an array
+#     - then map over each arrangement to show the boolean resulte
+#     - then once its mapped of, we can simply take the count of how many arrangements resulted in 'true'
+#
+# end
