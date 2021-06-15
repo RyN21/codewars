@@ -4,10 +4,20 @@ require 'pry'
 #=======================================================================================
 
 def solve(s, ops)
-  until s.size == 0
-    s.split('')
-    binding.pry
+  s = s.split("").map do |x|
+    if x == "t"
+      x = true
+    else
+      x = false
+    end
   end
+  ops = ops.split("")
+  os = []
+  until s.size == 1
+    os << s.shift
+    os << ops.shift
+  end
+  binding.pry
 
 
   # -start by shoveling first s into new string and convert to 'boolean'
