@@ -18,6 +18,7 @@ def solve(s, ops)
     os << ops.shift
     os = os.compact
   end
+  ss = os.join(",").tr(",", " ")
   binding.pry
 
 
