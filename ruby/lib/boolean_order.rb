@@ -13,9 +13,10 @@ def solve(s, ops)
   end
   ops = ops.split("")
   os = []
-  until s.size == 1
+  until s.size == 0
     os << s.shift
     os << ops.shift
+    os = os.compact
   end
   binding.pry
 
