@@ -4,7 +4,9 @@ require 'pry'
 #=======================================================================================
 
 class Calculator
-  
+  def evaluate
+
+  end
 end
 
 # BEST PRACTICE
