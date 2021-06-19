@@ -4,8 +4,8 @@ require 'pry'
 #=======================================================================================
 
 class Calculator
-  def evaluate
-
+  def evaluate(string)
+    
   end
 end
 
