@@ -7,6 +7,11 @@ class Calculator
   def evaluate(string)
     binding.pry
   end
+
+  def convert_string(string)
+  end
+
+  
 end
 
 # BEST PRACTICE
