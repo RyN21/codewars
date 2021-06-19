@@ -11,7 +11,18 @@ class Calculator
   def convert_string(string)
   end
 
-  
+  def addition()
+  end
+
+  def subtraction()
+  end
+
+  def multiplication()
+  end
+
+  def division()
+  end
+
 end
 
 # BEST PRACTICE
