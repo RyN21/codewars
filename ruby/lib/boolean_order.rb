@@ -19,13 +19,12 @@ def solve(s, ops)
     os = os.compact
   end
   ss = os.join(",").tr(",", " ")
+  create_arrangements(os)
+end
+
+def create_arrangements(os)
   binding.pry
 
-
-  # -start by shoveling first s into new string and convert to 'boolean'
-  # -then first ops into the next string.
-  # -as these are shoveled into the new string / array
-  # - we delete them so we can shovel the next one in an easy fashion
 end
 
 # BEST PRACTICE
