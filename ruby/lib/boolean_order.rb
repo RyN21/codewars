@@ -23,6 +23,7 @@ def solve(s, ops)
 end
 
 def create_arrangements(os)
+  
   binding.pry
 
 end
