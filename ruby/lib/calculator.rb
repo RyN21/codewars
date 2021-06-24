@@ -1,3 +1,15 @@
+# def evaluate("4 + 5 / 3")
+#   # 1. [4, +, 5, /, 3]
+#   # 2. if ^ array has * or /
+#   3. find the index of the 1st * or / and set the index to 'i'
+#   4. then calculate 'i-1' 'i' 'i+1' and replace 'i-1' 'i' 'i+1' with the answer
+#   5. repeat above until there are no * or / left
+#   6. if ^ array has + or -
+#   7. find the index of the 1st + or - and set the index to 'i'
+#   8. then calculate 'i-1' 'i' 'i+1' and replace 'i-1' 'i' 'i+1' with the answer
+#   9. repeat above until there are no + or - left
+#   10. return last remaining number in the array array[0]
+# end
 require 'pry'
 
 # MY SOLUTION
@@ -5,14 +17,13 @@ require 'pry'
 
 class Calculator
   def evaluate(string)
-    array = convert_string(string)
+    array = string.split(" ")
     if array.include?("*") || array.include?("/")
-      binding.pry
+      i = array.find_index("*" || "/")
+      calc = [array[i-1], array[i], array[i+1]].join(' ')
+      multiplication(calc) if array[i] == '*'
+      division([array[i-1], array[i], array[i+1]]) if array[i] == '/'
     end
-  end
-
-  def convert_string(string)
-    string.split(" ")
   end
 
   def addition()
@@ -21,7 +32,8 @@ class Calculator
   def subtraction()
   end
 
-  def multiplication()
+  def multiplication(string)
+    binding.pry
   end
 
   def division()
@@ -78,21 +90,21 @@ end
 # we can look for all the "*" and "/" first from left-to-right and perform the calculation
 # then we can find all the "+" and "-" and then perform those calculations last
 
-PSUEDO CODE
-
-def evaluate("4 + 5 / 3")
-  1. [4, +, 5, /, 3]
-  2. if ^ array has * or /
-    3. find the index of the 1st * or / and set the index to 'i'
-    4. then calculate 'i-1' 'i' 'i+1' and replace 'i-1' 'i' 'i+1' with the answer
-    5. repeat above until there are no * or / left
-  6. if ^ array has + or -
-    7. find the index of the 1st + or - and set the index to 'i'
-    8. then calculate 'i-1' 'i' 'i+1' and replace 'i-1' 'i' 'i+1' with the answer
-    9. repeat above until there are no + or - left
-  10. return last remaining number in the array array[0]
-end
-
-def calculation(array?)
-  
-end
+# PSUEDO CODE
+#
+# def evaluate("4 + 5 / 3")
+#   1. [4, +, 5, /, 3]
+#   2. if ^ array has * or /
+#     3. find the index of the 1st * or / and set the index to 'i'
+#     4. then calculate 'i-1' 'i' 'i+1' and replace 'i-1' 'i' 'i+1' with the answer
+#     5. repeat above until there are no * or / left
+#   6. if ^ array has + or -
+#     7. find the index of the 1st + or - and set the index to 'i'
+#     8. then calculate 'i-1' 'i' 'i+1' and replace 'i-1' 'i' 'i+1' with the answer
+#     9. repeat above until there are no + or - left
+#   10. return last remaining number in the array array[0]
+# end
+#
+# def calculation(array?)
+#
+# end
