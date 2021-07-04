@@ -18,12 +18,20 @@ require 'pry'
 class Calculator
   def evaluate(string)
     array = string.split(" ")
-    if array.include?("*") || array.include?("/")
+    until !array.include?("*") || !array.include?("/")
       i = array.find_index("*" || "/")
       calc = [array[i-1], array[i], array[i+1]].join(' ')
+      binding.pry
       multiplication(calc) if array[i] == '*'
       division(calc) if array[i] == '/'
     end
+    until array.count == 1
+      i = array.find_index("*" || "/")
+      calc = [array[i-1], array[i], array[i+1]].join(' ')
+      addition(calc) if array[i] == '*'
+      subtraction(calc) if array[i] == '/'
+    end
+    array[0].to_i
   end
 
   def addition(calc)
