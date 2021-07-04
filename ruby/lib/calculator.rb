@@ -22,21 +22,28 @@ class Calculator
       i = array.find_index("*" || "/")
       calc = [array[i-1], array[i], array[i+1]].join(' ')
       multiplication(calc) if array[i] == '*'
-      division([array[i-1], array[i], array[i+1]]) if array[i] == '/'
+      division(calc) if array[i] == '/'
     end
   end
 
-  def addition()
+  def addition(calc)
+    result = calc.split(" ").first.to_i + calc.split(" ").last.to_i
+    result
   end
 
-  def subtraction()
+  def subtraction(calc)
+    result = calc.split(" ").first.to_i - calc.split(" ").last.to_i
+    result
   end
 
-  def multiplication(string)
-    binding.pry
+  def multiplication(calc)
+    result = calc.split(" ").first.to_i * calc.split(" ").last.to_i
+    result
   end
 
-  def division()
+  def division(calc)
+    result = calc.split(" ").first.to_i / calc.split(" ").last.to_i
+    result
   end
 
 end
