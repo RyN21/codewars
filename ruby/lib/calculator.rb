@@ -18,39 +18,48 @@ require 'pry'
 class Calculator
   def evaluate(string)
     array = string.split(" ")
-    until !array.include?("*") || !array.include?("/")
-      i = array.find_index("*" || "/")
+    while array.include?("*") || array.include?("/")
+      m = array.find_index("*") if array.include?("*")
+      d = array.find_index("/") if array.include?("/")
+      if m == nil || d == nil
+        i = m if d == nil
+        i = d if m == nil
+      else
+        i = m if m < d && d != nil
+        i = d if d < m && m != nil
+      end
       calc = [array[i-1], array[i], array[i+1]].join(' ')
-      binding.pry
-      multiplication(calc) if array[i] == '*'
-      division(calc) if array[i] == '/'
+      array[i] = mult(calc).to_s if array[i] == '*'
+      array[i] = div(calc).to_s if array[i] == '/'
+      array.delete_at(i+1)
+      array.delete_at(i-1)
     end
     until array.count == 1
-      i = array.find_index("*" || "/")
+      i = array.find_index("+" || "-")
       calc = [array[i-1], array[i], array[i+1]].join(' ')
-      addition(calc) if array[i] == '*'
-      subtraction(calc) if array[i] == '/'
+      array[i] = add(calc).to_s if array[i] == '-'
+      array[i] = sub(calc).to_s if array[i] == '+'
     end
-    array[0].to_i
+    array[0].to_f
   end
 
-  def addition(calc)
-    result = calc.split(" ").first.to_i + calc.split(" ").last.to_i
+  def add(calc)
+    result = calc.split(" ").first.to_f + calc.split(" ").last.to_f
     result
   end
 
-  def subtraction(calc)
-    result = calc.split(" ").first.to_i - calc.split(" ").last.to_i
+  def sub(calc)
+    result = calc.split(" ").first.to_f - calc.split(" ").last.to_f
     result
   end
 
-  def multiplication(calc)
-    result = calc.split(" ").first.to_i * calc.split(" ").last.to_i
+  def mult(calc)
+    result = calc.split(" ").first.to_f * calc.split(" ").last.to_f
     result
   end
 
-  def division(calc)
-    result = calc.split(" ").first.to_i / calc.split(" ").last.to_i
+  def div(calc)
+    result = calc.split(" ").first.to_f / calc.split(" ").last.to_f
     result
   end
 
