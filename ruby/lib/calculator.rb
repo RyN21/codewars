@@ -28,9 +28,10 @@ class Calculator
         i = m if m < d && d != nil
         i = d if d < m && m != nil
       end
-      calc = [array[i-1], array[i], array[i+1]].join(' ')
-      array[i] = mult(calc).to_s if array[i] == '*'
-      array[i] = div(calc).to_s if array[i] == '/'
+      calc = [array[i-1], array[i], array[i+1]]
+      result = calc[0].to_f * calc[2].to_f if array[i] == '*'
+      result = calc[0].to_f / calc[2].to_f if array[i] == '/'
+      array[i] = result.to_s
       array.delete_at(i+1)
       array.delete_at(i-1)
     end
@@ -44,35 +45,15 @@ class Calculator
         i = a if a < s && s != nil
         i = d if s < a && a != nil
       end
-      calc = [array[i-1], array[i], array[i+1]].join(' ')
-      array[i] = add(calc).to_s if array[i] == '+'
-      array[i] = sub(calc).to_s if array[i] == '-'
+      calc = [array[i-1], array[i], array[i+1]]
+      result = calc[0].to_f + calc[2].to_f if array[i] == '+'
+      result = calc[0].to_f - calc[2].to_f if array[i] == '-'
+      array[i] = result.to_s
       array.delete_at(i+1)
       array.delete_at(i-1)
     end
     array[0].to_f
   end
-
-  def add(calc)
-    result = calc.split(" ").first.to_f + calc.split(" ").last.to_f
-    result
-  end
-
-  def sub(calc)
-    result = calc.split(" ").first.to_f - calc.split(" ").last.to_f
-    result
-  end
-
-  def mult(calc)
-    result = calc.split(" ").first.to_f * calc.split(" ").last.to_f
-    result
-  end
-
-  def div(calc)
-    result = calc.split(" ").first.to_f / calc.split(" ").last.to_f
-    result
-  end
-
 end
 
 # BEST PRACTICE
