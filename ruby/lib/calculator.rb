@@ -34,11 +34,21 @@ class Calculator
       array.delete_at(i+1)
       array.delete_at(i-1)
     end
-    until array.count == 1
-      i = array.find_index("+" || "-")
+    while array.include?("+") || array.include?("-")
+      a = array.find_index("+") if array.include?("+")
+      s = array.find_index("-") if array.include?("-")
+      if a == nil || s == nil
+        i = a if s == nil
+        i = s if a == nil
+      else
+        i = a if a < s && s != nil
+        i = d if s < a && a != nil
+      end
       calc = [array[i-1], array[i], array[i+1]].join(' ')
-      array[i] = add(calc).to_s if array[i] == '-'
-      array[i] = sub(calc).to_s if array[i] == '+'
+      array[i] = add(calc).to_s if array[i] == '+'
+      array[i] = sub(calc).to_s if array[i] == '-'
+      array.delete_at(i+1)
+      array.delete_at(i-1)
     end
     array[0].to_f
   end
