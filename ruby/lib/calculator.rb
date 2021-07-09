@@ -18,6 +18,7 @@ require 'pry'
 class Calculator
   def evaluate(string)
     array = string.split(" ")
+    binding.pry
     while array.include?("*") || array.include?("/")
       m = array.find_index("*") if array.include?("*")
       d = array.find_index("/") if array.include?("/")
