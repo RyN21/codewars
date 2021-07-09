@@ -18,8 +18,9 @@ require 'pry'
 class Calculator
   def evaluate(string)
     array = string.split(" ")
-    binding.pry
     while array.include?("*") || array.include?("/")
+      m = nil
+      d = nil
       m = array.find_index("*") if array.include?("*")
       d = array.find_index("/") if array.include?("/")
       if m == nil || d == nil
@@ -37,6 +38,8 @@ class Calculator
       array.delete_at(i-1)
     end
     while array.include?("+") || array.include?("-")
+      a = nil
+      s = nil
       a = array.find_index("+") if array.include?("+")
       s = array.find_index("-") if array.include?("-")
       if a == nil || s == nil
