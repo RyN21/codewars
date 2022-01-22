@@ -13,6 +13,7 @@ class CalculatorTest < Minitest::Test
     assert_equal  9, calc.evaluate("4 + 5")
     assert_equal  34, calc.evaluate("4 + 5 * 6")
     assert_equal  7, calc.evaluate("2 / 2 + 3 * 4 - 6")
+    assert_equal  127, calc.evaluate("127")
   end
 end
 

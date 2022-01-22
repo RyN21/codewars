@@ -56,7 +56,7 @@ class Calculator
       array.delete_at(i+1)
       array.delete_at(i-1)
     end
-    array[0].to_f
+    array[0]
   end
 end
 
